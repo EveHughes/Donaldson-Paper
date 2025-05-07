@@ -17,30 +17,50 @@ np.random.seed(853)
 
 
 #### Simulate data ####
-# State names
-states = [
-    "New South Wales", "Victoria", "Queensland", "South Australia", 
-    "Western Australia", "Tasmania", "Northern Territory", 
-    "Australian Capital Territory"
+
+# months
+months = [
+    "January", "February", "March", "April", "May", "June", "July",
+      "August", "September", "October", "November", "December"
 ]
 
-# Political parties
-parties = ["Labor", "Liberal", "Greens", "National", "Other"]
+# Generate the outbreak data using numpy and polars
+outbreaks19 = []
+outbreaks20 = []
+outbreaks21 = []
+outbreaks22 = []
+outbreaks23 = []
+outbreaks24 = []
 
-# Probabilities for state and party distribution
-state_probs = [0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025]
-party_probs = [0.40, 0.40, 0.05, 0.1, 0.05]
 
-# Generate the data using numpy and polars
-divisions = [f"Division {i}" for i in range(1, 152)]
-states_sampled = np.random.choice(states, size=151, replace=True, p=state_probs)
-parties_sampled = np.random.choice(parties, size=151, replace=True, p=party_probs)
+for _ in range(12):
+  outbreaks19.append(int(120* np.random.rand()))
+
+for _ in range(12):
+  outbreaks20.append(int(120* np.random.rand()))
+
+for _ in range(12):
+  outbreaks21.append(int(120* np.random.rand()))
+
+for _ in range(12):
+  outbreaks22.append(int(120* np.random.rand()))
+
+for _ in range(12):
+  outbreaks23.append(int(120* np.random.rand()))
+
+for _ in range(12):
+  outbreaks24.append(int(120* np.random.rand()))
+
 
 # Create a polars DataFrame
 analysis_data = pl.DataFrame({
-    "division": divisions,
-    "state": states_sampled,
-    "party": parties_sampled
+    "months": months,
+    "2019": outbreaks19,
+    "2020": outbreaks20,
+    "2021": outbreaks21,
+    "2022": outbreaks22,
+    "2023": outbreaks23,
+    "2024": outbreaks24
 })
 
 

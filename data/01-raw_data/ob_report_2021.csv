@@ -1,0 +1,395 @@
+_id,Institution Name,Institution Address,Outbreak Setting,Type of Outbreak,Causative Agent-1,Causative Agent-2,Date Outbreak Began,Date Declared Over,Active
+1,Ivan Franko Home,767 Royal York Rd,LTCH,Respiratory,COVID-19,,2021-12-31,2022-01-19,N
+2,The Claremont,305 Balliol St,Retirement Home,Respiratory,COVID-19,,2021-12-31,2022-01-31,N
+3,University Health Network - Bickle Centre - South 5,130 Dunn Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-31,2022-01-20,N
+4,Amica On the Avenue,1066 Avenue Rd,Retirement Home,Respiratory,COVID-19,,2021-12-30,2022-01-25,N
+5,Baycrest Hospital - 4 East (Psychiatry),3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-30,2022-01-13,N
+6,"Delmanor Prince Edward - 1st, 2nd, 6th Fl & Kitchen",4180 Dundas St W,Retirement Home,Respiratory,COVID-19,,2021-12-30,2022-01-26,N
+7,Greenview Lodge - 1st Fl,880 Lawrence Ave E,Retirement Home,Respiratory,COVID-19,,2021-12-30,2022-02-04,N
+8,"Labdara Lithuanian Nursing Home - 1st, 2nd & 3rd Fl",5 Resurrection Rd,LTCH,Respiratory,COVID-19,,2021-12-30,2022-02-19,N
+9,Mon Sheong Scarborough Long Term Care Centre - 2nd Fl,2030 McNicoll Ave,LTCH,Respiratory,COVID-19,,2021-12-30,2022-01-20,N
+10,North York General Hospital - 5 West,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-30,2022-01-16,N
+11,St. Bernard's Residence - 2nd & 3rd Fl,685 Finch Ave W,Retirement Home,Respiratory,COVID-19,,2021-12-30,2022-01-20,N
+12,Sts. Peter and Paul Residence,221 Milner Ave,Retirement Home,Respiratory,COVID-19,,2021-12-30,2022-02-15,N
+13,Sunnybrook Health Sciences Centre - Bayview Campus - C6,2075 Bayview Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-30,2022-01-13,N
+14,Unity Health Toronto - St. Michael's - 9 CC,30 Bond Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-30,2022-01-13,N
+15,Wexford Residence - 2nd & 7th Fl,1860 Lawrence Ave E,LTCH,Respiratory,COVID-19,,2021-12-30,2022-02-12,N
+16,Tendercare Living Centre,1020 McNicoll Ave,LTCH,Respiratory,COVID-19,,2021-12-29,2022-03-20,N
+17,"Bill McMurray Residence - Kitchen Area, Dining Area -","180 Sheridan Ave - 3rd, 5th, 6th & 7th Fl",Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-02-22,N
+18,Cedarbrook Lodge Retirement Residence - 2nd & 3rd Fl,520 Markham Rd,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-02-10,N
+19,Chartwell Guildwood Retirement Residence - 2nd Fl -,65 Livingston Rd - (Memory unit),Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-02-07,N
+20,"Ehatare Retirement Home - 1st, 2nd & 3rd Fl",40 Old Kingston Rd,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-01-28,N
+21,"Garden Court Nursing Home - 1st,2nd Fl & Kitchen",1 Sand Beach Rd,LTCH,Respiratory,COVID-19,,2021-12-29,2022-01-25,N
+22,Harold and Grace Baker Centre,1 Northwestern Ave,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-02-03,N
+23,Hillcrest Reactivation Centre,47 Austin Terr,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-29,2022-02-04,N
+24,"Leaside Retirement Residence - 2nd, 3rd Fl & Building 10",10 -14 William Morgan Drive,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-01-31,N
+25,McNicoll Manor/Moll Berczy Haus - 4th & 5th Fl,1020 McNicoll Ave,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-02-12,N
+26,Retirement Suites by the Lake,2121 Kingston Rd,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-01-31,N
+27,Tapestry at Village Gate West - Kitchen/Restaurant & -,15 Summerland Terr - Concierge/Front Desk,Retirement Home,Respiratory,COVID-19,,2021-12-29,2022-02-04,N
+28,Unity Health Toronto - St. Michael's - 7CCV North,30 Bond Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-29,2022-01-15,N
+29,Valleyview Residence - 2 East & 3 West,541 Finch Ave W,LTCH,Respiratory,COVID-19,,2021-12-29,2022-02-05,N
+30,West Park Healthcare Centre - ABIBS,82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-29,2022-01-17,N
+31,West Park Long Term Care Centre - Humber/York,82 Buttonwood Ave,LTCH,Respiratory,COVID-19,,2021-12-29,2022-01-18,N
+32,Yee Hong Centre for Geriatric Care - McNicoll - Kitchen,2311 McNicoll Ave - & 5 Fl,LTCH,Respiratory,COVID-19,,2021-12-29,2022-01-20,N
+33,Annex Retirement Residence,123 Spadina Rd,Retirement Home,Respiratory,COVID-19,,2021-12-28,2022-02-09,N
+34,Baycrest Apotex Centre - Jewish Home for the Aged,3560 Bathurst St,LTCH,Respiratory,COVID-19,,2021-12-28,2022-02-14,N
+35,Baycrest Hospital - 6 East,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-28,2022-01-21,N
+36,"Dom Lipa Long Term Care - 1 & 2 West, K Wing -",52 Neilson Dr - Laundry & Kitchen,LTCH,Respiratory,COVID-19,,2021-12-28,2022-02-09,N
+37,Elm Grove Living Centre,35 Elm Grove Ave,LTCH,Respiratory,COVID-19,,2021-12-28,2022-01-28,N
+38,Extendicare Guildwood,60 Guildwood Pky,LTCH,Respiratory,COVID-19,,2021-12-28,2022-02-15,N
+39,Extendicare Rouge Valley,551 Conlins Rd,LTCH,Respiratory,COVID-19,,2021-12-28,2022-02-12,N
+40,North York General Hospital - General Site - 6 West,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-28,2022-01-07,N
+41,Parkland on Eglinton West - 2nd - 5th Fl  West Tower,4650 Eglinton Ave W,Retirement Home,Respiratory,COVID-19,,2021-12-28,2022-02-06,N
+42,Scarborough Health Network - General Hospital - Tower 6 -,3030 Lawrence Ave E - Palliative Care/Oncology,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-28,2022-01-14,N
+43,Scarborough Health Network- Scarborough General- 4C Medicine,3030 Lawrence Ave. E.,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-28,2022-02-07,N
+44,Sunnybrook Health Sciences Centre - Veterans Centre -,2075 Bayview Ave - LSSE,LTCH,Respiratory,COVID-19,,2021-12-28,2022-01-21,N
+45,West Park  Healthcare Centre - Food Services Department,82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-28,2022-01-16,N
+46,Carefree Lodge,306 Finch Ave E,LTCH,Respiratory,COVID-19,,2021-12-27,2022-02-09,N
+47,Centre for Addiction and Mental Health - Unit 3-3 Forensics,1001 Queen Street West,Hospital-Psychiatric,Respiratory,COVID-19,,2021-12-27,2022-01-27,N
+48,Chartwell Scarlett Heights Retirement Residence - 1st & 2nd,4005 Eglinton Ave W,Retirement Home,Respiratory,COVID-19,,2021-12-27,2022-02-04,N
+49,Cheltenham Care Community - 1st & 3rd Fl,5935 Bathurst St,LTCH,Respiratory,COVID-19,,2021-12-27,2022-02-08,N
+50,"Kensington Gardens - South Building 1E, 2E, 3E, 4E, 1W, 2W -",25 Brunswick Ave - 4W,LTCH,Respiratory,COVID-19,,2021-12-27,2022-02-04,N
+51,"New Horizons Tower - Basement, Kitchen/Dining, 2nd & 3rd Fl",1140 Bloor St W,Retirement Home,Respiratory,COVID-19,,2021-12-27,2022-02-02,N
+52,Queens Estate Retirement Residence,265 Queens Dr,Retirement Home,Respiratory,COVID-19,,2021-12-27,2022-01-31,N
+53,Sunnybrook Health Sciences Centre - Veterans Centre -,2075 Bayview Ave - LTSE,LTCH,Respiratory,COVID-19,,2021-12-27,2022-01-23,N
+54,Craiglee Nursing Home - 3 West,102 Craiglee Dr,LTCH,Respiratory,COVID-19,,2021-12-26,2022-02-02,N
+55,"Fudger House - Basement Kitchen, 1E, 2E, 3E, 1W, 2W & 3W",439 Sherbourne St,LTCH,Respiratory,COVID-19,,2021-12-26,2022-02-03,N
+56,"Isabel and Arthur Meighen Manor (Salvation Army) - 2S, 3S &-",155 Millwood Rd - 4N,LTCH,Respiratory,COVID-19,,2021-12-26,2022-02-10,N
+57,"Kennedy Lodge - Main North, 2 North, 3 South & 3 North",1400 Kennedy Rd,LTCH,Respiratory,COVID-19,,2021-12-26,2022-02-04,N
+58,Kensington Place Retirement Residence,866 Sheppard Ave W,Retirement Home,Respiratory,COVID-19,,2021-12-26,2022-02-14,N
+59,St. Clair O'Connor Community Nursing Home,2701 St Clair Avenue East,LTCH,Respiratory,COVID-19,,2021-12-26,2022-01-31,N
+60,"The Dunfield Retirement Residence - 3rd, 4th & 10th Fl",77 Dunfield Ave,Retirement Home,Respiratory,COVID-19,,2021-12-26,2022-01-31,N
+61,West Park Healthcare Centre - 3EC (Neuro Rehab),82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-26,2022-01-16,N
+62,Castleview Wychwood Tower - Unit 4C,351 Christie St,LTCH,Respiratory,COVID-19,,2021-12-25,2022-03-07,N
+63,Humber River Hospital - Wilson - Purchasing Department,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-25,2022-01-06,N
+64,McCowan Retirement Residence - 6th Fl,2881 Eglinton Ave E,Retirement Home,Respiratory,COVID-19,,2021-12-25,2022-01-28,N
+65,Norfinch Care Community,22 Norfinch Dr,LTCH,Respiratory,COVID-19,,2021-12-25,2022-02-12,N
+66,Rockcliffe Care Community,3015 Lawrence Ave E,LTCH,Respiratory,COVID-19,,2021-12-25,2022-02-07,N
+67,Baycrest Hospital - 7 West,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-24,2022-01-08,N
+68,Baycrest Hospital - H6 West Palliative,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-24,2022-01-25,N
+69,Bendale Acres,2920 Lawrence Ave E,LTCH,Respiratory,COVID-19,,2021-12-24,2022-02-25,N
+70,Hazelton Place Retirement Residence,111 Avenue Rd,Retirement Home,Respiratory,COVID-19,,2021-12-24,2022-02-01,N
+71,Midland Gardens Care Community - 3rd Fl,130 Midland Ave,LTCH,Respiratory,COVID-19,,2021-12-24,2022-02-24,N
+72,"Nisbet Lodge - Dietary, Laundry Department & 7th Fl",740 Pape Ave,LTCH,Respiratory,COVID-19,,2021-12-24,2022-02-01,N
+73,Sinai Health System - Hennick Bridgepoint Hospital - 4N,14 St. Matthews Road,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-24,2022-01-13,N
+74,The Briton House - 9th Fl,700 & 720 Mount Pleasant Rd,Retirement Home,Respiratory,COVID-19,,2021-12-24,2022-02-10,N
+75,"Ukrainian Canadian Care Centre - 1st, 2nd, 3rd & 4th Fl",60 Richview Rd,LTCH,Respiratory,COVID-19,,2021-12-24,2022-02-07,N
+76,Unity Health Toronto - St. Michael's - MSICU,30 Bond Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-24,2022-01-12,N
+77,University Health Network - Toronto General -,200 Elizabeth Street - In-Centre Hemodialysis,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-24,2022-02-02,N
+78,Amica Bayview Gardens - 2nd Fl,19 Rean Dr,Retirement Home,Respiratory,COVID-19,,2021-12-23,2022-02-06,N
+79,Better Living at Thompson House - 2nd Fl,1 Overland Dr,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-15,N
+80,"Chartwell Grenadier Retirement Residence - B6, C6 -",2100 Bloor St W - & Main Kitchen,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-22,N
+81,Chartwell Westbury Long Term Care Residence,495 The West Mall,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-09,N
+82,"Copernicus Lodge - 3, 5 & 6 South, 1st, 2nd & 4th Fl -",66 Roncesvalles Ave - Admin Area & Kitchen,LTCH,Respiratory,COVID-19,,2021-12-23,2022-03-08,N
+83,"Fairview Nursing Home - 1st, 2nd & 3rd Fl",14 Cross St,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-08,N
+84,Fieldstone Commons Care Community,1000 Ellesmere Rd,LTCH,Respiratory,COVID-19,,2021-12-23,2022-03-06,N
+85,"Fountain View Care Community - 2B, 3A & 3B",1800 O'Connor Dr,LTCH,Respiratory,COVID-19,,2021-12-23,2022-01-25,N
+86,Harold and Grace Baker Centre,1 Northwestern Ave,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-07,N
+87,Main Street Terrace - 3rd Fl,77 Main St,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-10,N
+88,Reactivation Care Centre - Sunnybrook Church Site - A3N,200 Church St,Hospital-Chronic Care,Respiratory,COVID-19,,2021-12-23,2022-01-11,N
+89,Scarborough Health Network - General Hospital - T9 Medicine,3030 Lawrence Ave. E.,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-23,2022-01-12,N
+90,Scarborough Retirement Residence,148 Markham Rd,Retirement Home,Respiratory,COVID-19,,2021-12-23,2022-02-09,N
+91,Shepherd Lodge Nursing Home,3760 Sheppard Ave E,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-03,N
+92,Terraces of Baycrest,55 Ameer Ave,Retirement Home,Respiratory,COVID-19,,2021-12-23,2022-01-18,N
+93,Unity Health Toronto - St. Joseph's  - 7M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-23,2022-01-12,N
+94,University Health Network- Toronto General - 2nd Fl Cath Lab,200 Elizabeth Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-23,2022-01-10,N
+95,"Wesburn Manor - 2S, 3S, 4S, 2N, 3N, 4N, -",400 The West Mall - Main Fl & Laundry,LTCH,Respiratory,COVID-19,,2021-12-23,2022-02-15,N
+96,Cedarvale Terrace,429 Walmer Rd,LTCH,Respiratory,COVID-19,,2021-12-22,2022-02-08,N
+97,Eatonville Care Centre,420 The East Mall,LTCH,Respiratory,COVID-19,,2021-12-22,2022-02-15,N
+98,Ehatare Nursing Home - 4th Fl,40 Old Kingston Rd,LTCH,Respiratory,COVID-19,,2021-12-22,2022-01-18,N
+99,"Harmony Hills Care Community - 1A, 2A, 2B, 3A  & 3B unit",1800 O'Connor Dr,LTCH,Respiratory,COVID-19,,2021-12-22,2022-02-10,N
+100,"Norwood Nursing Home - Main, 1st & 2nd Fl",122 Tyndall Ave,LTCH,Respiratory,COVID-19,,2021-12-22,2022-01-28,N
+101,The Millwood - 4th Fl,921 Millwood Rd,LTCH,Respiratory,COVID-19,,2021-12-22,2022-02-01,N
+102,Tony Stacey Centre for Veterans Care,59 Lawson Rd,LTCH,Respiratory,COVID-19,,2021-12-22,2022-02-15,N
+103,University Health Network - Toronto General - 8th Fl -,200 Elizabeth St - ENT Laryngology - Administrative Offices,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-22,2022-01-11,N
+104,Chartwell Trilogy Long Term Care Residence - 5th & 7th Fl,340 McCowan Rd,LTCH,Respiratory,COVID-19,,2021-12-21,2022-02-14,N
+105,Downsview Long Term Care Centre,3595 Keele St,LTCH,Respiratory,COVID-19,,2021-12-21,2022-02-15,N
+106,Extendicare Scarborough,3830 Lawrence Ave E,LTCH,Respiratory,COVID-19,,2021-12-21,2022-02-14,N
+107,Humber Valley Terrace - 2nd & 3rd Fl,95 Humber College Blvd,LTCH,Respiratory,COVID-19,,2021-12-21,2022-02-08,N
+108,Ina Grafton Gage Home - 1st Fl,40 Bell Estate Rd,LTCH,Respiratory,COVID-19,,2021-12-21,2022-01-05,N
+109,Kingsway,4251 Dundas St W,Retirement Home,Respiratory,COVID-19,,2021-12-21,2022-02-05,N
+110,Rekai Centre - Wellesley Central Place,160 Wellesley St E,LTCH,Respiratory,COVID-19,,2021-12-21,2022-01-27,N
+111,Sherbourne Place - Rekai Centre,345 Sherbourne St,LTCH,Respiratory,COVID-19,,2021-12-21,2022-01-27,N
+112,"The Village of Humber Heights - Lambton, Alderwood, Weston -","2245 Lawrence Ave W - Islington, Brule & Wadsworth",LTCH,Respiratory,COVID-19,,2021-12-21,2022-02-07,N
+113,True Davidson Acres,200 Dawes Rd,LTCH,Respiratory,COVID-19,,2021-12-21,2022-02-07,N
+114,Hellenic Home - 1st Fl & 3A,2411 Lawrence Ave E,LTCH,Respiratory,COVID-19,,2021-12-20,2022-02-24,N
+115,Maynard Nursing Home,28 Halton St,LTCH,Respiratory,COVID-19,,2021-12-20,2022-01-26,N
+116,North Park Nursing Home,450 Rustic Rd,LTCH,Respiratory,COVID-19,,2021-12-20,2022-01-17,N
+117,St. George Care Community,225 St. George St,LTCH,Respiratory,COVID-19,,2021-12-20,2022-02-25,N
+118,Suomi Koti Nursing Home - 7th Fl,795 Eglinton Ave E,LTCH,Respiratory,COVID-19,,2021-12-20,2022-01-28,N
+119,The O'Neill Centre,33 Christie St,LTCH,Respiratory,COVID-19,,2021-12-20,2022-02-08,N
+120,"The Village of Humber Heights - Becker 4th & 5th Fl, Egerton",2245 Lawrence Ave W - Emma & WIlliamsburg East,LTCH,Respiratory,COVID-19,,2021-12-20,2022-02-08,N
+121,Kipling Acres,2233 Kipling Ave,LTCH,Respiratory,COVID-19,,2021-12-19,2022-02-11,N
+122,Shepherd Terrace Retirement Residence,3758 Sheppard Ave E,Retirement Home,Respiratory,COVID-19,,2021-12-19,2022-02-05,N
+123,Villa Colombo Home for the Aged,40 Playfair Ave,LTCH,Respiratory,COVID-19,,2021-12-19,2022-02-23,N
+124,Belmont House,55 Belmont St,LTCH,Respiratory,COVID-19,,2021-12-18,2022-02-07,N
+125,The Heritage Nursing Home,1195 Queen St E,LTCH,Respiratory,COVID-19,,2021-12-18,2022-02-10,N
+126,Unity Health Toronto - St. Joseph's - 6CG,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-18,2022-01-06,N
+127,Altamont Care Community,92 Island Rd,LTCH,Respiratory,COVID-19,,2021-12-17,2022-02-07,N
+128,Castleview Wychwood Towers - 7th C Fl,351 Christie St,LTCH,Respiratory,Coronavirus*,,2021-12-17,2021-12-24,N
+129,Christie Gardens - Seaton Unit,600 Melita Cres,Retirement Home,Respiratory,COVID-19,,2021-12-17,2022-01-20,N
+130,Hellenic Care for Seniors - Ground Fl,215 Tyrrel Avenue,LTCH,Respiratory,COVID-19,,2021-12-17,2022-02-13,N
+131,Maynard Nursing Home,28 Halton St,LTCH,Respiratory,Coronavirus*,,2021-12-17,2022-01-12,N
+132,The Russell Hill Retirement Residence,262 St. Clair Avenue W,Retirement Home,Respiratory,COVID-19,,2021-12-17,2022-02-04,N
+133,Westside Long Term Care Home,1145 Albion Rd,LTCH,Respiratory,COVID-19,,2021-12-17,2022-02-18,N
+134,Seven Oaks - SCU,9 Neilson Rd,LTCH,Respiratory,COVID-19,,2021-12-15,2022-02-07,N
+135,"Hawthorne Place Care Centre - 1st, 2nd, & 3rd Fl",2045 Finch Ave W,LTCH,Respiratory,COVID-19,,2021-12-14,2022-02-14,N
+136,Deerwood Creek Care Community,70 Humberline Dr,LTCH,Respiratory,COVID-19,,2021-12-13,2022-02-16,N
+137,The Briton House,700 Mount Pleasant Rd,Retirement Home,Respiratory,Coronavirus*,,2021-12-13,2021-12-25,N
+138,The Wexford - 4th Fl,1860 Lawrence Ave E,LTCH,Respiratory,Unable to identify,,2021-12-13,2021-12-31,N
+139,Chartwell Gibson Long Term Care Residence - 2nd Fl,1925 Steeles Ave E,LTCH,Respiratory,COVID-19,,2021-12-10,2022-01-31,N
+140,Weston Terrace Care Community,2005 Lawrence Ave W,LTCH,Respiratory,COVID-19,,2021-12-10,2022-02-08,N
+141,Lakeside Long Term Care Centre,150 Dunn Ave,LTCH,Respiratory,COVID-19,,2021-12-08,2022-01-31,N
+142,Chester Village,3555 Danforth Ave,LTCH,Respiratory,COVID-19,,2021-12-07,2022-01-26,N
+143,Humber River Hospital - Wilson - 14 East,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-07,2021-12-22,N
+144,"Cummer Lodge - SCU, 3N, 3S, 4N, & 4S",205 Cummer Ave,LTCH,Respiratory,COVID-19,,2021-12-05,2022-02-08,N
+145,Fountain View Care Community - 1st Fl,1800 O'Connor Dr,LTCH,Respiratory,COVID-19,,2021-12-05,2021-12-29,N
+146,Rekai Centre - 4 West,160 Wellesley St E,LTCH,Enteric,Unable to identify,,2021-12-05,2021-12-09,N
+147,The Westbury - 9th Fl,495 The West Mall,LTCH,Respiratory,Respiratory syncytial virus,,2021-12-05,2021-12-12,N
+148,Downsview Long Term Care Centre,3595 Keele St,LTCH,Respiratory,Respiratory syncytial virus,,2021-12-03,2021-12-15,N
+149,Downsview Long Term Care Centre - Unit 2,3595 Keele St,LTCH,Respiratory,COVID-19,,2021-12-03,2021-12-18,N
+150,William Osler Health System - 7E Cardiology,101 Humber College Boulevard,Hospital-Acute Care,Respiratory,COVID-19,,2021-12-03,2021-12-22,N
+151,Isabel & Arthur Meighen Manor - Moore Fl,155 Millwood Rd,LTCH,Respiratory,Rhinovirus,,2021-12-01,2021-12-20,N
+152,Ehatare Nursing Home - 4th Fl,40 Old Kingston Rd,LTCH,Respiratory,Rhinovirus,,2021-11-29,2021-12-14,N
+153,Kensington Hospice,38 Major St,Hospital-Acute Care,Respiratory,COVID-19,,2021-11-28,2021-12-14,N
+154,Holland Bloorview Kids Rehabilitation Hospital - 3 West BIRT,150 Kilgour Rd,Hospital-Chronic Care,Respiratory,Rhinovirus,,2021-11-26,2021-12-12,N
+155,Christie Gardens - Courtyard,600 Melita Cres,Retirement Home,Respiratory,Rhinovirus,,2021-11-24,2021-12-09,N
+156,Westside Long Term Care Home,1145 Albion Rd,LTCH,Respiratory,Coronavirus*,,2021-11-23,2021-12-20,N
+157,Scarborough Health Network - G3D-Medicine,3030 Birchmount Rd,Hospital-Acute Care,Respiratory,COVID-19,,2021-11-20,2021-12-04,N
+158,Weston Terrace Care Community - Main Fl,2005 Lawrence Ave W,LTCH,Respiratory,Rhinovirus,,2021-11-12,2021-11-24,N
+159,Extendicare Scarborough,3830 Lawrence Ave E,LTCH,Respiratory,Rhinovirus,,2021-11-08,2021-12-07,N
+160,Fountain View Care Community - 1st Fl,1800 O'Connor Dr,LTCH,Respiratory,Metapneumovirus,,2021-11-04,2021-11-16,N
+161,North York General Hospital -8W,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-11-02,2021-11-16,N
+162,Suomi Koti - 7th Fl,795 Eglinton Ave E,LTCH,Respiratory,Enterovirus/Rhinovirus,,2021-10-31,2021-11-10,N
+163,"Extendicare Bayview - East Center, West Center & Northwest",550 Cummer Ave,LTCH,Respiratory,Rhinovirus,,2021-10-21,2021-11-03,N
+164,Alexis Lodge Retirement Home,707 Ellesmere Rd,Retirement Home,Respiratory,Rhinovirus,,2021-10-19,2021-10-28,N
+165,Eatonville Care Centre - 5th Fl,420 The East Mall,LTCH,Respiratory,Unable to identify,,2021-10-18,2021-11-10,N
+166,Gibson Retirement Residence,1955 Steeles Ave E,Retirement Home,Respiratory,Pending,,2021-10-18,2021-10-26,N
+167,"St. Hilda's Towers - 6th, 9th, 10th & 14th Fl",2339 Dufferin St,Retirement Home,Respiratory,Coronavirus*,,2021-10-12,2021-10-22,N
+168,Terrace Gardens - 2nd Fl,3705 Bathurst St,Retirement Home,Respiratory,COVID-19,,2021-10-07,2021-10-23,N
+169,Humber Valley Terrace Long Term Care - 1st Fl,95 Humber College Blvd,LTCH,Respiratory,Coronavirus*,,2021-10-05,2021-10-16,N
+170,Bendale Acres Long Term Care Home - 2 West,2920 Lawrence Ave E,LTCH,Respiratory,Enterovirus/Rhinovirus,,2021-09-28,2021-09-29,N
+171,Amica Bayview Village,15 Barberry Pl,Retirement Home,Respiratory,COVID-19,,2021-09-23,2021-10-09,N
+172,The Westbury Long Term Care Residence - 3rd Fl,495 The West Mall,LTCH,Respiratory,Parainfluenza UNSPECIFIED,,2021-09-20,2021-10-05,N
+173,Ivan Franko Home - 3 West,767 Royal York Rd,LTCH,Respiratory,COVID-19,,2021-09-15,2021-10-15,N
+174,Weston Terrace Care Community - B3,2005 Lawrence Ave W,LTCH,Respiratory,COVID-19,,2021-09-15,2021-10-09,N
+175,NYGH Seniors Health Centre - 4th Fl,2 Buchan Crt,LTCH,Respiratory,COVID-19,,2021-09-13,2021-09-27,N
+176,Hazelton Place Retirement Residence - 3rd Fl,111 Avenue Rd,Retirement Home,Respiratory,COVID-19,,2021-09-11,2021-09-26,N
+177,Copernicus Lodge - 1 North,66 Roncesvalles Ave,LTCH,Respiratory,COVID-19,,2021-09-09,2021-10-07,N
+178,The Rekai Centre at Sherbourne Place - 2nd Fl,345 Sherbourne St,LTCH,Respiratory,Rhinovirus,,2021-09-08,2021-09-21,N
+179,"Extendicare Rouge Valley - 2nd Fl, Cedar Ridge Unit",551 Conlins Rd,LTCH,Respiratory,Rhinovirus,,2021-09-07,2021-09-24,N
+180,Unity Health Toronto - St. Joseph's Health Centre - 3M Unit,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-09-04,2021-09-22,N
+181,Eatonville Care Centre - 2nd Fl,420 The West Mall,LTCH,Enteric,Unable to identify,,2021-09-01,2021-09-02,N
+182,Bendale Acres - 4th Fl,2920 Lawrence Ave E,LTCH,Respiratory,Rhinovirus,,2021-08-22,2021-08-28,N
+183,"Fieldstone Commons - 1A, 2B, 3B Lilac Lane",1000 Ellesmere Rd,LTCH,Enteric,Unable to identify,,2021-08-22,2021-09-10,N
+184,Holland Bloorview Kids Rehabilitation Hospital - 3 East,150 Kilgour Rd,Hospital-Chronic Care,Respiratory,Rhinovirus,,2021-08-20,2021-09-02,N
+185,Ehatare Retirement Home,40 Old Kingston Rd,Retirement Home,Respiratory,Enterovirus,Rhinovirus,2021-08-16,2021-08-26,N
+186,Extendicare Guildwood,60 Guildwood Pky,LTCH,Respiratory,Rhinovirus,,2021-08-12,2021-09-08,N
+187,Suomi Koti - 7th Fl,795 Eglinton Ave E,LTCH,Respiratory,Rhinovirus,,2021-08-09,2021-08-26,N
+188,Chartwell Westbury Long Term Care Residence - 7th Fl,495 The West Mall,LTCH,Respiratory,COVID-19,,2021-08-05,2021-08-19,N
+189,Cheltenham Community Care - 3rd Fl,5935 Bathurst St,LTCH,Respiratory,Enterovirus/Rhinovirus,,2021-08-05,2021-08-16,N
+190,Christie Gardens Apartments & Care - 2nd Fl,600 Melita Crescent,Retirement Home,Respiratory,COVID-19,,2021-08-05,2021-08-18,N
+191,Unity Health Toronto - St. Joseph's Health Centre - 2E,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-08-04,2021-08-11,N
+192,Seven Oaks Long Term Care Home - 1st Fl,9 Neilson Rd,LTCH,Respiratory,Rhinovirus,,2021-07-27,2021-08-16,N
+193,The Rekai Centre - 4th Fl,160 Wellesley St E,LTCH,Enteric,Campylobacter unspecified,,2021-07-26,2021-08-03,N
+194,Labdara Lithuanian Nursing Home - 1st Fl,5 Resurrection Road,LTCH,Respiratory,COVID-19,,2021-07-23,2021-08-31,N
+195,Scarborough Health Network - General Hospital - H4C Medicine,3030 Lawrence Ave E,Hospital-Acute Care,Respiratory,COVID-19,,2021-07-13,2021-07-27,N
+196,Runnymede Healthcare Centre - 3rd Fl,625 Runnymede Road,Hospital-Chronic Care,Respiratory,COVID-19,,2021-07-12,2021-07-28,N
+197,Norfinch Care Community - 2nd Fl,22 Norfinch Dr,LTCH,Enteric,Unable to identify,,2021-07-07,2021-07-10,N
+198,Humber River Hospital - Wilson - 12 East,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-07-02,2021-07-19,N
+199,Scarborough Health Network - General Hospital - CP4 -,3030 Lawrence Ave E - Medicine Unit,Hospital-Acute Care,Respiratory,COVID-19,,2021-06-30,2021-07-13,N
+200,University Health Network - Toronto Western Hospital - 6A,399 Bathurst Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-06-17,2021-07-07,N
+201,Scarborough Health Network-Centenary Hospital - YC9E,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-21,2021-05-30,N
+202,Hospital for Sick Children - Unit 7C,555 University Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-20,2021-06-04,N
+203,Norfinch Care Community - 3A,22 Norfinch Drive,LTCH,Respiratory,COVID-19,,2021-05-18,2021-06-01,N
+204,University Health Network - Toronto General Hospital - 8ES,200 Elizabeth Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-17,2021-06-01,N
+205,1321 - Cummer Lodge - 205 Cummer Avenue - Toronto,205 Cummer Ave,LTCH,Respiratory,COVID-19,,2021-05-15,2021-06-01,N
+206,University Health Network - Toronto General Hospital -,200 Elizabeth Street - Transportation & Linen Services,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-15,2021-06-02,N
+207,Hillcrest Reactivation Centre - 4th Fl,47 Austin Terr,Hospital-Chronic Care,Respiratory,COVID-19,,2021-05-14,2021-06-06,N
+208,Chartwell Trilogy- 4th Fl,340 McCowan Road,LTCH,Respiratory,COVID-19,,2021-05-11,2021-06-10,N
+209,Christie Gardens - Annex Unit,600 Melita Crescent,Retirement Home,Respiratory,COVID-19,,2021-05-11,2021-05-29,N
+210,University Health Network - Toronto General Hospital - 7B,200 Elizabeth Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-08,2021-05-27,N
+211,University Health Network - Toronto General Hospital -,200 Elizabeth Street - 5B Cardiology,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-07,2021-05-18,N
+212,University Health Network - Lyndhurst - Special rehab - 1B,520 Sutherland Drive,Hospital-Chronic Care,Respiratory,COVID-19,,2021-05-06,2021-05-20,N
+213,Baycrest Hospital - 6E,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-05-04,2021-05-19,N
+214,Humber River Hospital - Wilson - 9E Nephrology,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-04,2021-06-01,N
+215,Toronto East Health Network-Atrium at Kew Beach - 2nd Fl,500 Kingston Rd.,Hospital-Acute Care,Respiratory,COVID-19,,2021-05-03,2021-05-28,N
+216,Runnymede Healthcare Centre - 3rd Fl,625 Runnymede Road,Hospital-Chronic Care,Respiratory,COVID-19,,2021-05-02,2021-05-17,N
+217,Humber River Hospital - Wilson - 7W Cardiology,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-30,2021-05-18,N
+218,Kingsway,4251 Dundas Street St W,Retirement Home,Enteric,Norovirus-like,,2021-04-30,2021-05-16,N
+219,Chartwell Westbury Long Term Care Residence - 6th Fl,495 The West Mall,LTCH,Respiratory,COVID-19,,2021-04-29,2021-06-25,N
+220,Baycrest Apotex Centre - Jewish Home for the Aged -7GS & 7EI,3560 Bathurst St,LTCH,Respiratory,COVID-19,,2021-04-28,2021-06-02,N
+221,The Village of Humber Heights - Alderwood Unit,2245 Lawrence Ave W,LTCH,Respiratory,COVID-19,,2021-04-28,2021-06-07,N
+222,Unity Health Toronto-St. Joseph's Health Centre - 4LM,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-28,2021-05-12,N
+223,Copernicus Lodge - Kitchen,66 Roncesvalles Avenue,LTCH,Respiratory,COVID-19,,2021-04-27,2021-05-17,N
+224,Sunnybrook Health Sciences Centre -St. John's Rehabilitation,285 Cummer Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-27,2021-05-11,N
+225,Unity Health Toronto - Providence Healthcare - A5,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-26,2021-05-16,N
+226,Unity Health Toronto-St. Joseph's Health Centre - 4M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-26,2021-05-12,N
+227,Scarborough Health Network - General Hospital - T9,3030 Lawrence Ave E,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-25,2021-05-16,N
+228,St. George Care Community - 3rd Fl & Basement,225 St. George Street,LTCH,Respiratory,COVID-19,,2021-04-25,2021-05-12,N
+229,Delmanor Prince Edward - 7th Fl,4180 Dundas Street,LTCH,Respiratory,COVID-19,,2021-04-23,2021-05-12,N
+230,University Health Network - Toronto Western Hospital - 8A,399 Bathurst Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-22,2021-05-17,N
+231,Deerwood Creek Care Community - Main kitchen,70 Humberline Drive,LTCH,Respiratory,COVID-19,,2021-04-21,2021-06-02,N
+232,Sunnybrook Health Sciences Centre - Bayview Campus - F2,2075 Bayview Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-21,2021-05-02,N
+233,Trillium Health Partners - Church Site - 1C,200 Church Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-21,2021-05-01,N
+234,Baycrest Apotex Centre - Jewish Home for the Aged - 6RF,3560 Bathurst St,LTCH,Respiratory,COVID-19,,2021-04-20,2021-05-04,N
+235,Kipling Acres - Alders & Thisletown,2233 Kipling Ave,LTCH,Respiratory,COVID-19,,2021-04-20,2021-05-13,N
+236,"The O'Neill Centre Long Term Care - 2nd, 4th & 5th Fl",33 Christie St,LTCH,Respiratory,COVID-19,,2021-04-20,2021-05-28,N
+237,Unity Health Toronto-St. Joseph's Health Centre - 2LM,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-20,2021-05-04,N
+238,William Osler Health System - Etobicoke General Hospital -,101 Humber College Boulevard - 7E Cardiology,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-20,2021-05-24,N
+239,Downsview Long Term Care - 2nd Fl,3595 Keele St,LTCH,Respiratory,COVID-19,,2021-04-19,2021-05-11,N
+240,Hawthorne Place Care Centre - 2nd Fl,2045 Finch Ave West,LTCH,Respiratory,COVID-19,,2021-04-19,2021-05-06,N
+241,Humber Valley Terrace - 3A Fl,95 Humber College Blvd,LTCH,Respiratory,COVID-19,,2021-04-19,2021-05-13,N
+242,Cummer Lodge - 3 North,205 Cummer Avenue,LTCH,Respiratory,COVID-19,,2021-04-18,2021-06-01,N
+243,St Bernards Retirement Residence,685 Finch Ave West,LTCH,Respiratory,COVID-19,,2021-04-18,2021-04-30,N
+244,Unity Health Toronto - Providence Healthcare - D3,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-18,2021-05-10,N
+245,University Health Network - Toronto General Hospital -,200 Elizabeth Street - Hemodialysis Centre,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-18,2021-05-03,N
+246,Scarborough Health Network-Centenary Hospital - YC9W,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-17,2021-04-25,N
+247,Scarborough Health Network-Centenary Hospital - YC9E,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-16,2021-05-04,N
+248,Eatonville Care Centre - Unit 5,420 The East Mall,LTCH,Respiratory,COVID-19,,2021-04-15,2021-05-17,N
+249,Scarborough Health Network-Centenary Hospital - YC3MB W,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-15,2021-05-08,N
+250,Weston Terrace Care Community - admin-area,2005 Lawrence Avenue West,LTCH,Respiratory,COVID-19,,2021-04-14,2021-05-10,N
+251,Fudger House - 2W,439 Sherbourne St,LTCH,Respiratory,COVID-19,,2021-04-13,2021-05-03,N
+252,University Health Network - Toronto General Hospital - 13ES,200 Elizabeth Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-13,2021-04-29,N
+253,Dom Lipa,52 Neilson Drive,LTCH,Respiratory,COVID-19,,2021-04-12,2021-04-27,N
+254,Baycrest Hospital - Security Dept.,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-09,2021-04-21,N
+255,Bendale Acres -3rd Fl,2920 Lawrence Avenue East,LTCH,Respiratory,COVID-19,,2021-04-09,2021-05-11,N
+256,William Osler Health System - Church Site - 5th Fl,200 Church Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-08,2021-05-04,N
+257,Unity Health Toronto - Providence Healthcare - B3,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-06,2021-04-27,N
+258,Unity Health Toronto - Providence Healthcare - B4,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-06,2021-04-20,N
+259,Unity Health Toronto-St. Joseph's Health Centre - 4M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-06,2021-04-15,N
+260,Toronto East Health Network- Michael Garron Hospital- J5,825 Coxwell Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-05,2021-04-12,N
+261,Extendicare Scarborough - Laundry Department,3830 Lawrence Avenue East,LTCH,Respiratory,COVID-19,,2021-04-05,2021-04-20,N
+262,Norfinch Care Community - Fl 2A,22 Norfinch Drive,LTCH,Respiratory,COVID-19,,2021-04-04,2021-05-02,N
+263,William Osler Health System - Etobicoke General Hospital -,101 Humber College Boulevard - 8 Medflex,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-04,2021-04-26,N
+264,Runnymede Healthcare Centre - 2nd Fl,625 Runnymede Road,Hospital-Chronic Care,Respiratory,COVID-19,,2021-04-03,2021-04-18,N
+265,The Heritage Nursing Home - 4th Fl,1195 Queen Street East,LTCH,Respiratory,COVID-19,,2021-04-03,2021-05-19,N
+266,Toronto East Health Network-Michael Garron Hospital - B2,825 Coxwell Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-03,2021-04-13,N
+267,Copernicus Lodge - 3rd & 6th Fl,66 Roncesvalles Avenue,LTCH,Respiratory,COVID-19,,2021-04-02,2021-04-17,N
+268,William Osler Health System - Etobicoke General Hospital -8W,101 Humber College Boulevard,Hospital-Acute Care,Respiratory,COVID-19,,2021-04-02,2021-05-04,N
+269,Sisters of St. Joseph - 3rd Fl,2 O'Connor Dr,LTCH,Respiratory,COVID-19,,2021-04-01,2021-04-16,N
+270,Kensington Place Retirement Residence - 2nd Fl,866 Sheppard Avenue,LTCH,Respiratory,COVID-19,,2021-03-31,2021-04-27,N
+271,St. Michael's Hospital - Unity Health Toronto - 8CS,30 Bond Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-30,2021-04-18,N
+272,Humber River Hospital - Wilson Site - 9 East,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-26,2021-04-08,N
+273,Scarborough Health Network - General Hospital - 4C,3030 Lawrence Ave E,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-23,2021-04-04,N
+274,The Rekai Centres at Wellesley Street - TCU,160 Wellesley Street East,LTCH,Respiratory,COVID-19,,2021-03-23,2021-04-07,N
+275,University Health Network - Toronto Western Hospital-,399 Bathurst St - 6B,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-22,2021-04-12,N
+276,Copernicus Lodge - 3 North,66 Roncesvalles Ave,LTCH,Enteric,Unable to identify,,2021-03-22,2021-03-27,N
+277,Unity Health Toronto - St. Joseph's Health Centre- 3M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-19,2021-04-07,N
+278,University Health Network - Toronto General Hospital -,200 Elizabeth Street - OR Staff areas,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-17,2021-03-27,N
+279,Revera Westside Long Term Care - 2nd Fl,1145 Albion Rd,LTCH,Respiratory,COVID-19,,2021-03-16,2021-04-15,N
+280,The O'Neill Centre Long Term Care - 2nd and 5th Floor,33 Christie St,LTCH,Respiratory,COVID-19,,2021-03-13,2021-04-15,N
+281,University Health Network -Toronto General Hospital,200 Elizabeth Street - Hemodialysis Unit,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-12,2021-04-04,N
+282,Fieldstone Commons Care Community - 3A Fl,1000 Ellesmere Road,LTCH,Respiratory,COVID-19,,2021-03-11,2021-05-13,N
+283,Kipling Acres - Claireville & Highfield Unit,2233 Kipling Ave,LTCH,Respiratory,COVID-19,,2021-03-05,2021-03-19,N
+284,Unity Health Toronto-St. Joseph's Health Centre - 2M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-03-02,2021-03-22,N
+285,Lakeside Long Term Care Centre - 1st & 3rd Fl,150 Dunn Avenue,LTCH,Respiratory,COVID-19,,2021-02-26,2021-03-15,N
+286,Centre for Addiction & Mental Health - Unit 1-4,1001 Queen Street West,Hospital-Psychiatric,Respiratory,COVID-19,,2021-02-23,2021-03-09,N
+287,University Health Network - Toronto Western Hospital - 3B,399 Bathrust Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-23,2021-03-06,N
+288,Fairview Nursing Home,14 Cross St,LTCH,Respiratory,COVID-19,,2021-02-22,2021-03-12,N
+289,The Wexford Residence - 2nd Fl,1860 Lawrence Ave E,LTCH,Respiratory,COVID-19,,2021-02-22,2021-03-08,N
+290,Tony Stacey Centre for Veteran's Care,59 Lawson Rd,LTCH,Enteric,Unable to identify,,2021-02-22,2021-02-26,N
+291,Main Street Terrace - 2nd & 3rd Fl,77 Main Street,LTCH,Respiratory,COVID-19,,2021-02-21,2021-04-16,N
+292,Centre for Addiction & Mental Health - Unit 1-3,1001 Queen Street West,Hospital-Psychiatric,Respiratory,COVID-19,,2021-02-20,2021-03-06,N
+293,Humber River Hospital - Wilson - 12 West,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-16,2021-02-27,N
+294,Scarborough Health Network - Birchmount Hospital - G4C,3030 Birchmount Rd.,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-16,2021-03-06,N
+295,Sinai Health System - Mount Sinai - 10N,600 University Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-12,2021-02-26,N
+296,"Weston Terrace Care Community  - 1A , 2A, 3B & 4B",2005 Lawrence Ave W,LTCH,Respiratory,COVID-19,,2021-02-12,2021-04-19,N
+297,Runnymede Healthcare Centre - 3rd Fl,625 Runnymede Road,Hospital-Chronic Care,Respiratory,COVID-19,,2021-02-11,2021-03-09,N
+298,Unity Health Toronto-St. Joseph's Health Centre - 6G,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-11,2021-02-28,N
+299,North York General Hospital - General Site - 5 West,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-10,2021-03-05,N
+300,North York General Hospital - General Site - 6 North,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-10,2021-02-17,N
+301,Sinai Health System - Mount Sinai - 10S,600 University Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-10,2021-02-19,N
+302,North York General Hospital - General Site - 4W,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-08,2021-03-01,N
+303,Unity Health Toronto-St. Joseph's Health Centre - 3M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-05,2021-03-03,N
+304,Ehatare Retirement Home - Scarborough,40 Old Kingston Road,LTCH,Respiratory,COVID-19,,2021-02-04,2021-02-20,N
+305,Sinai Health System - Mount Sinai - 12 South,600 University Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-04,2021-02-19,N
+306,"St. Hilda's Towers Retirement Home - 2nd, 3rd & 4th Fl",2339 Dufferin Street,Retirement Home,Respiratory,COVID-19,,2021-02-04,2021-02-24,N
+307,University Health Network - Toronto Western Hospital - 9A,399 Bathrust Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-04,2021-02-18,N
+308,Weston Gardens Retirement Residence,303 Queens Drive,Retirement Home,Respiratory,COVID-19,,2021-02-04,2021-02-25,N
+309,Dom Lipa,52 Neilson Drive,LTCH,Respiratory,COVID-19,,2021-02-03,2021-02-25,N
+310,Sunnybrook Health Sciences Centre- St. John's Rehab - A1&A2,285 Cummer Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-02-03,2021-02-22,N
+311,Toronto East Health Network-Michael Garron Hospital-G5-med-,825 Coxwell Avenue - palliative care,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-03,2021-02-18,N
+312,Unity Health Toronto-St. Joseph's Health Centre - 6M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-02-03,2021-02-22,N
+313,Carefree Lodge - Main Fl,306 Finch Avenue East,LTCH,Respiratory,COVID-19,,2021-02-02,2021-02-20,N
+314,Kensington Gardens North Building - 3 West,45 Brunswick Ave,LTCH,Respiratory,COVID-19,,2021-02-02,2021-02-20,N
+315,Hazelton Place Retirement Residence - 3rd Fl,111 Avenue Rd,Retirement Home,Respiratory,COVID-19,,2021-02-01,2021-02-18,N
+316,West Park Healthcare Centre - 3EC,82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-02-01,2021-02-19,N
+317,Kensington Gardens North Building  1 West & 1 East,45 Brunswick Avenue,LTCH,Respiratory,COVID-19,,2021-01-31,2021-02-20,N
+318,Amica on the Avenue - Toronto,1066 Avenue Road,Retirement Home,Respiratory,COVID-19,,2021-01-29,2021-02-12,N
+319,Scarborough Health Network - General Hospital - T6,3050 Lawrence Ave E,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-29,2021-02-23,N
+320,Vermont Square - 3rd Fl,914 Bathurst Street,LTCH,Respiratory,COVID-19,,2021-01-28,2021-02-19,N
+321,West Park Healthcare Centre - 3WE,82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-28,2021-02-13,N
+322,North York General Hospital - General Site - 3 West,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-26,2021-03-03,N
+323,Terraces of Baycrest,55 Ameer Ave,Retirement Home,Enteric,Campylobacter jejuni,,2021-01-25,2021-02-16,N
+324,Kensington Place Retirement Residence,866 Sheppard Avenue,Retirement Home,Respiratory,COVID-19,,2021-01-24,2021-02-24,N
+325,Toronto Rehabilitation Institute - 7S,550 University Ave,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-23,2021-02-14,N
+326,Toronto East Health Network-Michael Garron Hospital - A2,825 Coxwell Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-22,2021-01-29,N
+327,University Health Network - Toronto General Hospital-10th Fl,200 Elizabeth Street - EVS,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-22,2021-02-07,N
+328,Baycrest Hospital - 6W,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-21,2021-02-12,N
+329,MacKenzie Health-RCC - 3E & 3W,2111 Finch Avenue West,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-21,2021-02-05,N
+330,Scarborough Health Network-Centenary Hospital - Y9E,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-21,2021-02-05,N
+331,University Health Network - Toronto General Hospital - 12 Fl,200 Elizabeth Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-21,2021-02-06,N
+332,Chartwell Scarlett Heights Retirement Residence - 9th Fl,4005 Eglinton Avenue,Retirement Home,Respiratory,COVID-19,,2021-01-20,2021-02-05,N
+333,North York General Hospital - General Site - 3 North,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-20,2021-02-20,N
+334,Scarborough Health Network-Centenary Hospital - YC3ME,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-20,2021-02-03,N
+335,Unity Health Toronto - Providence Healthcare - B3,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-19,2021-02-02,N
+336,William Osler Health System - 9E,101 Humber College Boulevard,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-19,2021-02-01,N
+337,"Cummer Lodge - 2, 3 & 4 North",205 Cummer Ave,LTCH,Respiratory,COVID-19,,2021-01-18,2021-02-13,N
+338,Fieldstone Commons Care Community,1000 Ellesmere Rd,LTCH,Respiratory,COVID-19,,2021-01-18,2021-02-26,N
+339,Toronto East Health Network-Michael Garron Hospital - F3,825 Coxwell Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-18,2021-02-04,N
+340,"Hawthorne Place Care Centre - 1st, 2nd & 3rd Fl",2045 Finch Ave W,LTCH,Respiratory,COVID-19,,2021-01-16,2021-02-08,N
+341,Ina Grafton Gage Home,40 Bell Estate Road,LTCH,Respiratory,COVID-19,,2021-01-15,2021-02-18,N
+342,"Norfinch Care Community - 1A, 2A & 3B",22 Norfinch Drive,LTCH,Respiratory,COVID-19,,2021-01-15,2021-03-18,N
+343,Ukrainian Canadian Care Centre - Basement & 1st Fl,60 Richview Rd,LTCH,Respiratory,COVID-19,,2021-01-15,2021-02-19,N
+344,William Osler Health System-RCC Church - 5B,200 Church Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-15,2021-01-29,N
+345,West Park Healthcare Centre - 2EC,82 Buttonwood Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-14,2021-02-05,N
+346,West Park Healthcare Centre - 3EB,82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-14,2021-02-02,N
+347,William Osler Health System - 10th Fl,101 Humber College Boulevard,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-14,2021-02-27,N
+348,University Health Network - Toronto Western Hospital - 6B,399 Bathrust Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-13,2021-01-25,N
+349,Humber River Hospital - Wilson - 13 East,1235 Wilson Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-12,2021-01-25,N
+350,Mon Sheong Scarborough,2030 McNicoll Avenue,LTCH,Respiratory,COVID-19,,2021-01-12,2021-02-18,N
+351,North York General Hospital - General Site - 6 West,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-12,2021-02-10,N
+352,Alexis Lodge Retirement Home,707 Ellesmere Rd,LTCH,Respiratory,COVID-19,,2021-01-11,2021-02-21,N
+353,Baycrest Hospital - Toronto - 5E,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-11,2021-02-05,N
+354,North York General Hospital - General Site - 8 West,4001 Leslie Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-11,2021-01-28,N
+355,Scarborough Health Network-Centenary Hospital - 5E,2867 Ellesmere Road,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-11,2021-01-27,N
+356,Toronto East Health Network-Michael Garron Hospital - J5,825 Coxwell Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-11,2021-01-22,N
+357,"Extendicare Craiglee - Dietary, Housekeeping & 1W",102 Craiglee Drive,LTCH,Respiratory,COVID-19,,2021-01-10,2021-02-17,N
+358,Scarborough Health Network - Birchmount Hospital - G3D,3030 Birchmount Rd.,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-10,2021-02-02,N
+359,Ehatare Nursing Home - 4th Fl,40 Old Kingston Rd,LTCH,Respiratory,COVID-19,,2021-01-09,2021-01-25,N
+360,Retirement Suites by the Lake,2121 Kingston Road,Retirement Home,Respiratory,COVID-19,,2021-01-09,2021-02-05,N
+361,University Health Network - Toronto General Hospital - 6ES,200 Elizabeth Street,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-09,2021-02-06,N
+362,Dom Lipa - 1 West & K-Wing,52 Neilson Drive,LTCH,Respiratory,COVID-19,,2021-01-08,2021-02-01,N
+363,Kensington Gardens - 1 East,25 Brunswick Avenue,LTCH,Respiratory,COVID-19,,2021-01-08,2021-01-28,N
+364,Scarborough Health Network - General Hospital - 3C,3050 Lawrence Ave E,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-08,2021-01-20,N
+365,The Dunfield Retirement Residence - 3rd Fl,77 Dunfield Avenue,Retirement Home,Respiratory,COVID-19,,2021-01-08,2021-01-30,N
+366,"Labdara Lithuanian Nursing Home - Kitchen, 3rd Fl",5 Resurrection Road,LTCH,Respiratory,COVID-19,,2021-01-07,2021-01-22,N
+367,Scarborough Retirement Residence,148 Markham Road,Retirement Home,Respiratory,COVID-19,,2021-01-07,2021-02-12,N
+368,Unity Health Toronto - Providence Healthcare - A4,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-07,2021-01-15,N
+369,Unity Health Toronto - St. Joseph's Health Centre - 4th Fl,200 Church Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-07,2021-01-27,N
+370,University Health Network - Bickle Centre - 3South,130 Dunn Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-07,2021-01-20,N
+371,William Osler Health System - 7 West,101 Humber College Boulevard,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-07,2021-02-01,N
+372,Nisbet Lodge,740 Pape Avenue,LTCH,Respiratory,COVID-19,,2021-01-06,2021-01-29,N
+373,Toronto East Health Network-Atrium at Kew Beach -,500 Kingston Road - 3rd Fl,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-06,2021-02-03,N
+374,Unity Health Toronto - Providence Healthcare - B4,3276 St. Clair Avenue East,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-06,2021-01-25,N
+375,Unity Health Toronto-St. Joseph's Health Centre - 3M,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-06,2021-01-22,N
+376,Cedarvale Terrace,429 Walmer Road,LTCH,Respiratory,COVID-19,,2021-01-05,2021-02-16,N
+377,Cheltenham Care Community,5935 Bathurst Street,LTCH,Respiratory,COVID-19,,2021-01-05,2021-02-22,N
+378,Unity Health Toronto-St. Joseph's Health Centre - 4LM,30 The Queensway,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-05,2021-01-19,N
+379,West Park Healthcare Centre - 2WD & 2WE,82 Buttonwood Avenue,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-05,2021-02-11,N
+380,Cummer Lodge - 4 South,205 Cummer,LTCH,Respiratory,COVID-19,,2021-01-04,2021-01-22,N
+381,Humber River Hospital - RCC Finch Site - 6 East,2111 Finch Avenue West,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-04,2021-01-29,N
+382,Lakeshore Lodge,3197 Lakeshore Blvd,LTCH,Respiratory,COVID-19,,2021-01-04,2021-02-17,N
+383,Scarborough Health Network - General Hospital - 4C,3030 Lawrence Ave E,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-04,2021-01-30,N
+384,"Weston Terrace Care Community - 1A, 2A, 2B, 3B, 4A",2005 Lawrence Avenue West,LTCH,Respiratory,COVID-19,,2021-01-04,2021-02-10,N
+385,Atrium at Kew Beach,500 Kingston Road,LTCH,Respiratory,COVID-19,,2021-01-03,2021-02-16,N
+386,Baycrest Hospital - H7E,3560 Bathurst Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-03,2021-02-22,N
+387,Sunnybrook Health Sciences Centre - Bayview Campus - K3E,2075 Bayview Avenue,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-03,2021-01-28,N
+388,Trillium Health Partners-RCC Church Site - 6B,200 Church Street,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-03,2021-02-08,N
+389,North York General Hospital - 4 West,4001 Leslie St,Hospital-Acute Care,Respiratory,COVID-19,,2021-01-02,2021-01-07,N
+390,O'Neill Centre - 2nd & 3rd Fl,33 Christie Street,LTCH,Respiratory,COVID-19,,2021-01-02,2021-02-16,N
+391,Delmanor Prince Edward,4180 Dundas Street,Retirement Home,Respiratory,COVID-19,,2021-01-01,2021-02-14,N
+392,Kensington Gardens South Building - 4E,45 Brunswick Avenue,LTCH,Respiratory,COVID-19,,2021-01-01,2021-02-14,N
+393,North York General Hospital-RCC Finch - 6 West,2111 Finch Avenue West,Hospital-Chronic Care,Respiratory,COVID-19,,2021-01-01,2021-02-02,N
+394,Tony Stacy Centre,59 Lawson Road,LTCH,Respiratory,COVID-19,,2021-01-01,2021-02-19,N
