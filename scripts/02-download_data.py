@@ -19,11 +19,11 @@ import requests
 # https://docs.ckan.org/en/latest/api/
 
 # To hit our API, you'll be making requests to:
-base_url = "https://ckan0.cf.opendata.inter.prod-toronto.ca + '"
+base_url = "https://ckan0.cf.opendata.inter.prod-toronto.ca"
 
 # Datasets are called "packages". Each package can contain many "resources"
 # To retrieve the metadata for this package and its resources, use the package name in this page's URL:
-url = base_url + "/api/3/action/80ce0bd7-adb2-4568-b9d7-712f6ba38e4e_show"
+url = base_url + "/api/3/action/package_show"
 params = { "id": "outbreaks-in-toronto-healthcare-institutions"}
 package = requests.get(url, params = params).json()
 
