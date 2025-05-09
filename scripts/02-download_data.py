@@ -9,8 +9,8 @@
 
 
 #### Workspace setup ####
-import numpy as np
 import polars as pl
+import io
 
 #### Download data ####
 import requests
@@ -28,6 +28,7 @@ params = { "id": "outbreaks-in-toronto-healthcare-institutions"}
 package = requests.get(url, params = params).json()
 
 # To get resource data:
+i = 2016
 for idx, resource in enumerate(package["result"]["resources"]):
 
        # for datastore_active resources:
@@ -35,23 +36,10 @@ for idx, resource in enumerate(package["result"]["resources"]):
 
            # To get all records in CSV format:
            url = base_url + "/datastore/dump/" + resource["id"]
-           resource_dump_data = requests.get(url).text
-           print(resource_dump_data)
+           resource_dump_data = requests.get(url)
+           print("doing something for year " + str(i))
 
-           # To selectively pull records and attribute-level metadata:
-           url = base_url + "/api/3/action/datastore_search"
-           p = { "id": resource["id"] }
-           resource_search_data = requests.get(url, params = p).json()["result"]
-           print(resource_search_data)
-           # This API call has many parameters. They're documented here:
-           # https://docs.ckan.org/en/latest/maintaining/datastore.html
-
-
-
-#### Save data ####
-# [...UPDATE THIS...]
-# change the_raw_data to whatever name you assigned when you downloaded it.
-analysis_data = pl.DataFrame(resource_dump_data)
-analysis_data.write_csv("inputs/data/raw_data.csv")
-
-         
+           # Writing raw data to CSV
+           analysis_data = pl.DataFrame(io.StringIO(resource_dump_data.text))
+           analysis_data.write_csv("data/01-raw_data/" + str(i) + "_raw.csv", separator = ",")
+           i+=1

@@ -31,6 +31,7 @@ outbreaks21 = []
 outbreaks22 = []
 outbreaks23 = []
 outbreaks24 = []
+total_outbreaks = []
 
 
 for _ in range(12):
@@ -50,6 +51,10 @@ for _ in range(12):
 
 for _ in range(12):
   outbreaks24.append(int(120* np.random.rand()))
+
+for i in range(12):
+  total = outbreaks19[i] + outbreaks20[i] + outbreaks21[i] + outbreaks22[i] + outbreaks23[i] + outbreaks24[i]
+  total_outbreaks.append()
 
 
 # Create a polars DataFrame
