@@ -9,61 +9,50 @@
 
 
 #### Workspace setup ####
-library(tidyverse)
-library(testthat)
-
-data <- read_csv("data/02-analysis_data/analysis_data.csv")
-
+import polars as pl
+import numbers
+causative_agent_cleaned = pl.read_csv("data/02-analysis_data/causative_agent_cleaned.csv")
+yearly_total_cleaned = pl.read_csv("data/02-analysis_data/yearly_total_cleaned.csv")
 
 #### Test data ####
-# Test that the dataset has 151 rows - there are 151 divisions in Australia
-test_that("dataset has 151 rows", {
-  expect_equal(nrow(analysis_data), 151)
-})
+# Test that the dataset has 10 rows - one for each year between 2016-2025 inclusive
+assert yearly_total_cleaned.shape[0] == 10, "Dataset does not have 10 rows"
 
-# Test that the dataset has 3 columns
-test_that("dataset has 3 columns", {
-  expect_equal(ncol(analysis_data), 3)
-})
+# Test that the dataset has 6 columns
+assert yearly_total_cleaned.shape[1] == 10, "Dataset does not have 6 columns"
 
-# Test that the 'division' column is character type
-test_that("'division' is character", {
-  expect_type(analysis_data$division, "character")
-})
+# Test that the 'coronavirus' column is int
+print(yearly_total_cleaned["Coronavirus"].dtype)
+assert yearly_total_cleaned["Coronavirus"].dtype == pl.Int64, "Coronavirus column is not int type"
 
-# Test that the 'party' column is character type
-test_that("'party' is character", {
-  expect_type(analysis_data$party, "character")
-})
+# Test that the 'influenza' column is int 
+assert yearly_total_cleaned["Influenza"].dtype == pl.Int64, "Influenza column is not int type"
 
-# Test that the 'state' column is character type
-test_that("'state' is character", {
-  expect_type(analysis_data$state, "character")
-})
+# Test that the 'Syncytial Virus' column is int 
+assert yearly_total_cleaned["Syncytial Virus"].dtype == pl.Int64, "Syncytial Virus column is not int type"
+
+# Test that the 'Norovirus' column is int
+assert yearly_total_cleaned["Norovirus"].dtype == pl.Int64, "Norovirus column is not int type"
+
+# Test that the 'Metapneumovirus' column is int
+assert yearly_total_cleaned["Metapneumovirus"].dtype == pl.Int64, "Metapneumovirus column is not int type"
+
+# Test that the 'Rhinovirus' column is int
+assert yearly_total_cleaned["Rhinovirus"].dtype == pl.Int64, "Rhinovirus column is not int type"
+
+# Test that the 'Parainfluenza' column is int
+assert yearly_total_cleaned["Parainfluenza"].dtype == pl.Int64, "Parainfluenza column is not int type"
+
+# Test that the 'Respiratory' column is int
+assert yearly_total_cleaned["Respiratory"].dtype == pl.Int64, "Respiratory column is not int type"
+
+# Test that the 'Total' column is int
+assert yearly_total_cleaned["Total"].dtype == pl.Int64, "Total column is not int type"
 
 # Test that there are no missing values in the dataset
-test_that("no missing values in dataset", {
-  expect_true(all(!is.na(analysis_data)))
-})
+assert yearly_total_cleaned.null_count().to_series().sum() == 0, "Dataset has missing values"
 
-# Test that 'division' contains unique values (no duplicates)
-test_that("'division' column contains unique values", {
-  expect_equal(length(unique(analysis_data$division)), 151)
-})
-
-# Test that 'state' contains only valid Australian state or territory names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", 
-                  "Tasmania", "Northern Territory", "Australian Capital Territory")
-test_that("'state' contains valid Australian state names", {
-  expect_true(all(analysis_data$state %in% valid_states))
-})
-
-# Test that there are no empty strings in 'division', 'party', or 'state' columns
-test_that("no empty strings in 'division', 'party', or 'state' columns", {
-  expect_false(any(analysis_data$division == "" | analysis_data$party == "" | analysis_data$state == ""))
-})
-
-# Test that the 'party' column contains at least 2 unique values
-test_that("'party' column contains at least 2 unique values", {
-  expect_true(length(unique(analysis_data$party)) >= 2)
-})
+# Test that respiratory count <= total count
+value = True
+for row in yearly_total_cleaned.rows(named = True):
+  assert row["Respiratory"] <= row["Total"], "Total is less than total respiratory"
