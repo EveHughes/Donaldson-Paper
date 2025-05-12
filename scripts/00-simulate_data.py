@@ -15,59 +15,37 @@ import polars as pl
 import numpy as np
 np.random.seed(853)
 
-
 #### Simulate data ####
 
-# months
-months = [
-    "January", "February", "March", "April", "May", "June", "July",
-      "August", "September", "October", "November", "December"
-]
+#constants
+YEARS = ["2019", "2020", "2021", "2022", "2023", "2024"]
+DISEASE_COLUMNS = ["Coronavirus", "Influenza", "Syncytial Virus", 
+                   "Metapneumovirus", "Rhinovirus", "Parainfluenza", "Respiratory", "Total"]
 
 # Generate the outbreak data using numpy and polars
-outbreaks19 = []
-outbreaks20 = []
-outbreaks21 = []
-outbreaks22 = []
-outbreaks23 = []
-outbreaks24 = []
-total_outbreaks = []
+#creating dictionary w/ columns
+data = dict()
+data["Year"] = YEARS
+for column in DISEASE_COLUMNS:
+  data[column] = [0, ]*6
+data["Respiratory"] =[0, ]*6
+data["Total"] = [0, ]*6
 
+#generating random values for data
+for i in range(6):
+  respiratory_count = 0
+  for disease in DISEASE_COLUMNS:
+    outbreak_count = int(100*np.random.rand())
+    data[disease][i] = outbreak_count
+    respiratory_count += outbreak_count
 
-for _ in range(12):
-  outbreaks19.append(int(120* np.random.rand()))
-
-for _ in range(12):
-  outbreaks20.append(int(120* np.random.rand()))
-
-for _ in range(12):
-  outbreaks21.append(int(120* np.random.rand()))
-
-for _ in range(12):
-  outbreaks22.append(int(120* np.random.rand()))
-
-for _ in range(12):
-  outbreaks23.append(int(120* np.random.rand()))
-
-for _ in range(12):
-  outbreaks24.append(int(120* np.random.rand()))
-
-for i in range(12):
-  total = outbreaks19[i] + outbreaks20[i] + outbreaks21[i] + outbreaks22[i] + outbreaks23[i] + outbreaks24[i]
-  total_outbreaks.append()
-
+  respiratory_count += int(100*np.random.rand())
+  data["Respiratory"][i] = respiratory_count
+  total_count = respiratory_count + int(100*np.random.rand())
+  data["Total"][i] = total_count
 
 # Create a polars DataFrame
-analysis_data = pl.DataFrame({
-    "months": months,
-    "2019": outbreaks19,
-    "2020": outbreaks20,
-    "2021": outbreaks21,
-    "2022": outbreaks22,
-    "2023": outbreaks23,
-    "2024": outbreaks24
-})
-
+analysis_data = pl.DataFrame(data)
 
 #### Save data ####
 analysis_data.write_csv("data/00-simulated_data/simulated_data.csv")
