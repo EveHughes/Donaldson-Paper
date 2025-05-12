@@ -14,8 +14,8 @@ import polars as pl
 import matplotlib.pyplot as plt
 
 #### Read data ####
-most_common_data = pl.read_csv("data/02-analysis_data/high_disease_count.csv")
-dict1 = most_common_data.to_dict(as_series = False)
+composition_data = pl.read_csv("data/02-analysis_data/disease_count.csv")
+dict1 = composition_data.to_dict(as_series = False)
 analysis_data = pl.read_csv("data/02-analysis_data/yearly_disease_count.csv")
 
 
@@ -25,11 +25,30 @@ DISEASES = ["Influenza", "Coronavirus", "Syncytial Virus", "Metapneumovirus", "R
 SMALLER = ["Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
 LARGER = {"Coronavirus", "Respiratory", "Total"}
 
-for disease in SMALLER:
-  plt.plot(t, analysis_data[disease], label = disease)
+print(dict1)
+COLUMNS = ["Coronavirus", "Other", "Unknown"]
+for key in COLUMNS:
+  for i in range(6):
+    dict1[key][i] = 100*dict1[key][i]/dict1["Total Agents"][i]
 
+print(dict1)
+corona = np.array(dict1["Coronavirus"])
+other = np.array(dict1["Other"])
+unknown = np.array(dict1["Unknown"])
 
-plt.legend(loc="upper right")
+ind = np.arange(6)    
+width = 0.35       
+
+p1 = plt.bar(ind, corona, width, color='#d62728', )
+p2 = plt.bar(ind, other, width,  bottom=corona)
+p3 = plt.bar(ind, unknown, width,  bottom=corona+other)
+
+plt.ylabel('Percentage of Causative Agents')
+plt.title('Composition of Respiratory Disease Outbreaks')
+plt.xticks(ind, ('2019', '2020', '2021', '2022', '2023', '2024'))
+plt.yticks(np.arange(0, 110, 10))
+plt.legend((p1[0], p2[0], p3[0]), ('Coronavirus', 'Other', "Unknown"))
+
 plt.show()
 
 #### Save model ####
