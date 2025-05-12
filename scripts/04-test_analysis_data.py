@@ -10,18 +10,21 @@
 
 #### Workspace setup ####
 import polars as pl
-import numbers
-high_disease_count = pl.read_csv("data/02-analysis_data/high_disease_count.csv")
+disease_count = pl.read_csv("data/02-analysis_data/disease_count.csv")
 yearly_disease_count = pl.read_csv("data/02-analysis_data/yearly_disease_count.csv")
 
 
-#### Test high_disease_count data ####
+#### Test disease_count data ####
 # Test that there are no missing values in the dataset
-assert high_disease_count.null_count().to_series().sum() == 0, "Dataset has missing values"
+assert disease_count.null_count().to_series().sum() == 0, "Dataset has missing values"
 
 #Test all columns are int type
-for type in high_disease_count.dtypes:
+for type in disease_count.dtypes:
   assert type == pl.Int64
+
+#Test counts add to total
+for row in disease_count.rows(named = True):
+  assert row["Coronavirus"] + row["Other"] + row["Unknown"] == row["Total Agents"], "sum does not equal total"
 
 #### Test yearly_disease_count data ####
 # Test that the dataset has 10 rows - one for each year between 2016-2025 inclusive
@@ -58,6 +61,5 @@ assert yearly_disease_count["Total"].dtype == pl.Int64, "Total column is not int
 assert yearly_disease_count.null_count().to_series().sum() == 0, "Dataset has missing values"
 
 # Test that respiratory count <= total count
-value = True
 for row in yearly_disease_count.rows(named = True):
   assert row["Respiratory"] <= row["Total"], "Total is less than total respiratory"

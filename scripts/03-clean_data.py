@@ -17,10 +17,12 @@ YEARS = ["2019", "2020", "2021", "2022", "2023", "2024"]
 DISEASE_COLUMNS = ["Coronavirus", "Influenza", "Syncytial Virus", 
                    "Metapneumovirus", "Rhinovirus", "Parainfluenza", "Respiratory", "Total"]
 
-
-
 #initializing dictionaries
 disease_count = dict()
+disease_count["Coronavirus"] = [0, ]*6
+disease_count["Other"] = [0, ]*6
+disease_count["Unknown"] = [0, ]*6
+disease_count["Total Agents"] = [0, ]*6
 
 #general disease -> list of # of outbreaks in each year
 yearly_disease_count = dict()
@@ -32,52 +34,49 @@ yearly_disease_count["Total"] = [0, ]*6
 
 #### Clean data ####
 
-## Finding most common respiratory diseases to analyze ##
+## Finding composition based on primary causative agents ##
 
 for i in range(2019, 2025):
     raw = pl.read_csv("data/01-raw_data/ob_report_" + str(i) + ".csv")
     for row in raw.rows(named = True):
+       #index
+        index = i - 2019
+
        #getting disease type, only check common respiratory
         disease_type = row["Type of Outbreak"]
         if disease_type != "Respiratory":
             continue
        
-        #getting causative agent
+        #getting causative agents
         if "Causative Agent-1" in row.keys():
             disease_one = row["Causative Agent-1"]
         else:
             disease_one = row["Causative Agent - 1"]
-         
+
         if "Causative Agent-2" in row.keys():
             disease_two = row["Causative Agent-2"]
         else:
-            disease_two = row["Causative Agent - 2"]   
-
-        #updating from agent 1
-        if disease_one in disease_count:
-            disease_count[disease_one] += 1
+            disease_two = row["Causative Agent - 2"]
+         
+        #updating count from disease_one
+        disease_count["Total Agents"][index] += 1
+        if "covid" in disease_one.lower() or "corona" in disease_one.lower():
+            disease_count["Coronavirus"][index] += 1
+        elif "unable" in disease_one.lower():
+            disease_count["Unknown"][index] += 1
         else:
-            disease_count[disease_one] = 1
+            disease_count["Other"][index] += 1
+        
+        if disease_two != None:
+            disease_count["Total Agents"][index] += 1
+            if "covid" in disease_two.lower() or "corona" in disease_two.lower():
+                disease_count["Coronavirus"][index] += 1
+            elif "unable" in disease_two.lower():
+                disease_count["Unknown"][index] += 1
+            else:
+                disease_count["Other"][index] += 1
 
-        #updating from agent 2
-        if disease_two in disease_count:
-            disease_count[disease_two] += 1
-        else:
-            disease_count[disease_two] = 1
-
-#looking at diseases with over 50 total cases
-high_disease_count = dict()
-for key in disease_count:
-    if disease_count[key] >= 25:
-        high_disease_count[key] = disease_count[key]
-
-#getting rid of null type
-if None in high_disease_count:
-    high_disease_count["None"] = high_disease_count[None]
-    del high_disease_count[None]
-
-
-## Cleaning high count respiratory diseases 
+## summing total cases for the year
 for i in range(2016, 2026):
     if i not in [2019, 2020, 2021, 2022, 2023, 2024]:
         continue
@@ -143,8 +142,8 @@ for i in range(2016, 2026):
 
 ### SAVE TO CSV ###
 #saving respiratory diseases with high count
-df = pl.DataFrame(high_disease_count)
-df.write_csv("data/02-analysis_data/high_disease_count.csv")
+df = pl.DataFrame(disease_count)
+df.write_csv("data/02-analysis_data/disease_count.csv")
 
 #saving yearly respiratory disease counts
 df = pl.DataFrame(yearly_disease_count)

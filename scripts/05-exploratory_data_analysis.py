@@ -9,29 +9,27 @@
 
 
 #### Workspace setup ####
-library(tidyverse)
-library(rstanarm)
+import numpy as np
+import polars as pl
+import matplotlib.pyplot as plt
 
 #### Read data ####
-analysis_data <- read_csv("data/analysis_data/analysis_data.csv")
+most_common_data = pl.read_csv("data/02-analysis_data/high_disease_count.csv")
+dict1 = most_common_data.to_dict(as_series = False)
+analysis_data = pl.read_csv("data/02-analysis_data/yearly_disease_count.csv")
+
 
 ### Model data ####
-first_model <-
-  stan_glm(
-    formula = flying_time ~ length + width,
-    data = analysis_data,
-    family = gaussian(),
-    prior = normal(location = 0, scale = 2.5, autoscale = TRUE),
-    prior_intercept = normal(location = 0, scale = 2.5, autoscale = TRUE),
-    prior_aux = exponential(rate = 1, autoscale = TRUE),
-    seed = 853
-  )
+t = np.arange(2019, 2025, 1)
+DISEASES = ["Influenza", "Coronavirus", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+SMALLER = ["Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+LARGER = {"Coronavirus", "Respiratory", "Total"}
 
+for disease in SMALLER:
+  plt.plot(t, analysis_data[disease], label = disease)
+
+
+plt.legend(loc="upper right")
+plt.show()
 
 #### Save model ####
-saveRDS(
-  first_model,
-  file = "models/first_model.rds"
-)
-
-
