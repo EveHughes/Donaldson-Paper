@@ -14,25 +14,6 @@ number-sections: true
 bibliography: references.bib
 ---
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-
 # Introduction
 
 On January 25, 2020, the first case of COVID-19 was reported in Canada, in a healthcare facility in Toronto (Cheese 2025). Around two months later on March 17, Doug Ford declared a state of emergency for Ontario, and the closure of facilities such as schools. Additionally, mask mandates, social distancing guidelines, and vaccine cards were all put into place to mitigate the spread of the disease. Later around 2022, these restrictions began to lift. Schools went back in person, etc, etc, etc. (Compartin 2022). As the restrictions lift, it becomes important to characterize the effect they hold upon respiratory diseases both as a whole, and specific diseases.
@@ -62,7 +43,22 @@ By the Ministry of Health, a respiratory outbreak is constituted by â€œTwo cases
 Causative Agent-1 is either a specific agent (ie: Coronavirus), or "Unable to identify".
 Causative Agent-2 is either a specific agent, or "None".
 
-*insert table showing first few lines of raw data
+Below is an example of the raw data from 2019:
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import polars as pl
+import matplotlib.pyplot as plt
+
+raw_data = pl.read_csv("Donalson-Paper/data/01-raw_data/ob_report_" + "2019" + ".csv")
+raw_data = raw_data.head(5)
+example_data = raw_data.to_dict(as_series = False)
+plt.table(example_data)
+
+plt.show()
+```
 
 For this analysis, the variables of interest are the yearly number of outbreaks for Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Over 2019-2024. 
 
@@ -74,17 +70,78 @@ Instances of coronavirus and covid-19 were grouped together under the title of â
 
 Below is a sample of the cleaned data:
 
-*** insert table
+```{python}
+#| label: disease-count-preview
+#| fig-cap: "A line plot on a polar axis"
 
-Below are the summary statistics for the cleaned data:
+import polars as pl
+import matplotlib.pyplot as plt
 
-*** insert summary statistics
+raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/disease_count.csv")
+raw_data = raw_data.head(5)
+example_data = raw_data.to_dict(as_series = False)
+plt.table(example_data)
+
+plt.show()
+```
+```{python}
+#| label: yearly-count-preview
+#| fig-cap: "A line plot on a polar axis"
+
+import polars as pl
+import matplotlib.pyplot as plt
+
+raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/yearly_disease_count.csv")
+raw_data = raw_data.head(5)
+example_data = raw_data.to_dict(as_series = False)
+plt.table(example_data)
+
+plt.show()
+```
+
+Below are the summary statistics for the cleaned yearly count data:
+
+```{python}
+#| label: yearly-count-summary-statistics
+#| fig-cap: "A line plot on a polar axis"
+
+import polars as pl
+import matplotlib.pyplot as plt
+
+raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/yearly_disease_count.csv")
+summary_data = raw_data.describe()
+summary_data = summary_data.to_dict(as_series = False)
+plt.table(summary_data)
+
+plt.show()
+```
 
 
 # Results
 
 Total & respiratory & Coronavirus:
-*** insert graph 
+```{python}
+#| label: corona-resp-total-graph
+#| fig-cap: "A line plot on a polar axis"
+
+import polars as pl
+import matplotlib.pyplot as plt
+import np as np
+
+t = np.arange(2019, 2025, 1)
+KEYS = ["Coronavirus", "Respiratory", "Total"]
+raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/yearly_disease_count.csv")
+for key in KEYS:
+  plt.plot(t, raw_data[key], label = key, {'marker': 'o'})
+
+plt.set_title("Coronavirus, Respiratory & Total Outbreaks")
+plt.set_xlabel("Year")
+plt.set_ylabel("Outbreak Count")
+plt.grid()
+
+plt.legend()
+plt.show()
+```
 
 We see that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards
 
