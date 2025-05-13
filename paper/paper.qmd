@@ -15,7 +15,7 @@ bibliography: references.bib
 ---
 
 ```{python}
-#| label: fig-polar-1
+#| label: fig-polar
 #| fig-cap: "A line plot on a polar axis"
 
 import numpy as np
@@ -41,7 +41,6 @@ Previously, in 2021, research was conducted to examine the effects of covid prot
 
 This analysis first examines the trends in the overall number of outbreaks and respiratory outbreaks each year to better understand how the number of outbreaks has been varying over the years and identify general trends. Then, it looks at coronavirus, Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Finally, it examines the trends in percentage of respiratory outbreaks with covid as an agent. Through the data visualization, it was found that while coronavirus outbreaks have been falling since their covid levels, other respiratory diseases have been seeing a subsequent increase in cases post pandemic. Additionally, the percentage of respiratory outbreaks with covid as an agent has been decreasing since the pandemic. So, while an emphasis on covid specific protocols is important, preventative measures for other respiratory diseases, such as RSV vaccines, that were overshadowed during the pandemic should be further encouraged (Public Health Agency of Canada 2024).
 
-
 In the sections that follow are a description of the data, visualization of the data and discussion of the results.
 
 
@@ -55,149 +54,72 @@ The dataset consists of data from years 2016-2025 inclusive, with each containin
 
 “Under the Ontario Health Protection and Promotion Act (HPPA), healthcare institutions (hospitals, long-term care homes and retirement homes) are required to monitor staff and patients/residents for signs and symptoms of gastroenteric (e.g., nausea, vomiting, diarrhea, fever) and respiratory (e.g., cough, runny nose, sore throat, fever) infections. Healthcare institutions must also actively look for, detect and report suspected and/or confirmed outbreaks to their local public health unit”
 
-For every record there is an id number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. 
+For every record there is an id number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. Below is a preview of this information:
 
 The type of outbreak is listed as Respiratory, Enteric, or Other.
 By the Ministry of Health, a respiratory outbreak is constituted by “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). https://www.toronto.ca/wp-content/uploads/2023/06/9942-Outbreak-Preparedness-ToolkitRespiratoryTableTopFacilitators.pdf
 
-Causative Agent-1 is listed as either as the specific causative agent (eg Covid-19), or is listed as "Unable to Identify". 
-Causative Agent-2 is listed as either the specific secondary causative agent, or is listed as "None".
+Causative Agent-1 is either a specific agent (ie: Coronavirus), or "Unable to identify".
+Causative Agent-2 is either a specific agent, or "None".
 
-Below is a preview of this information:
+*insert table showing first few lines of raw data
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
+For this analysis, the variables of interest are the yearly number of outbreaks for Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Over 2019-2024. 
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-
-For this analysis, the variables of interest are the yearly number of outbreaks for Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus over the years of 2019 - 2024 inclusive.
 
 ## Analysis Data
 	
 For each year, the number of cases were aggregated, and were aggregated within each respective category. The diseases of interest were: Coronavirus Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. 
-Instances of coronavirus and covid-19 were grouped together under the title of “coronavirus”. 
-Influenza A & B were additionally grouped together under the title “Influenza”. 
+Instances of coronavirus and covid-19 were grouped together under the title of “coronavirus”, given covid is caused by a coronavirus. Influenza A & B were additionally grouped together under the title “Influenza”. 
 
 Below is a sample of the cleaned data:
 
+*** insert table
 
-```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
+Below are the summary statistics for the cleaned data:
 
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
+*** insert summary statistics
 
-And the summary statistics for the cleaned data:
-
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
-#| echo: false
-#| warning: false
-#| message: false
-
-analysis_data <- read_csv(here::here("data/02-analysis_data/analysis_data.csv"))
-
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
-```
 
 # Results
 
-## Total Outbreak, Coronavirus Outbreak, and Respiratory Outbreak 
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
+Total & respiratory & Coronavirus:
+*** insert graph 
 
-library(rstanarm)
+We see that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards
 
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
-```
+The number of cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
 
-## Influenza Outbreak & Other 
+Composition of Respiratory Illness:
+*** insert graph 
+Covid / Secondary Disease / Other & Unknown
 
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
+Influenza:
+Number of cases fall from 2019- 2021, with 0 cases in 2021, and increase thereafter.
 
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
-```
-
-## Other outbreaks
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults-2
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
-
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
-```
+Parainfluenza, RSV, Metapneumovirus, and Rhinovirus:
+Each has specifics, see general trend of lower number & some w/ slight decrease reported in pre-pandemic & pandemic, with a subsequent increase post.
 
 
 # Discussion
 
-## Total Outbreak, Coronavirus Outbreak, and Respiratory Outbreak {#sec-first-point}
+## Rise in Non-Covid Respiratory Outbreaks {#sec-first-point}
 
 If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
 
-## Influenza Outbreak & Other 
+## Decrease in Covid Percentage of Respiratory Outbreaks
 
 Please don't use these as sub-heading labels - change them to be what your point actually is.
-
-## Other outbreaks
 
 
 ## Weaknesses and next steps
 
-One main weakness with this analysis is it is limited to healthcare facilities, which fail to be representative of the larger demographic of Toronto. A next step would be to analyze disease outbreak in the general population.
+Weaknesses and next steps should also be included.
 
 \newpage
+
+\appendix
+
 
 
 \newpage
