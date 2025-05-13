@@ -46,6 +46,8 @@ For every record there is an id number, institution name, institution address, o
 The type of outbreak is listed as Respiratory, Enteric, or Other.
 By the Ministry of Health, a respiratory outbreak is constituted by “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). https://www.toronto.ca/wp-content/uploads/2023/06/9942-Outbreak-Preparedness-ToolkitRespiratoryTableTopFacilitators.pdf
 
+Healthcare facilities include ....
+
 Causative Agent-1 is either a specific agent (ie: Coronavirus), or "Unable to identify".
 Causative Agent-2 is either a specific agent, or "None".
 
@@ -217,6 +219,7 @@ plt.show()
 ```
 
 It becomes evident that since the end of the pandemic, the proportion of Coronavirus outbreaks compared to non-coronavirus outbreaks has been steadily decreasing.
+
 ## Non-Covid Respiratory Outbreaks
 ```{python}
 #| label: no-corona-graph
@@ -257,18 +260,16 @@ Post pandemic (2022-2024), all, with the exception of Influenza, have resurged t
 
 # Discussion
 
-## Rise in Non-Covid Respiratory Outbreaks {#sec-first-point}
+It becomes apparent that given coronaviruses continue to comprise the greatest proportion of respiratory disease outbreaks in healthcare facilities in Toronto, and coronavirus outbreak trends match those of total respiratory outbreaks from, and total outbreaks from  2019-2024 that coronavirus outbreaks remain the biggest driver of disease outbreaks in Toronto. However, since the pandemic we have seen a decrease in both coronavirus cases, and percentage composition of all agents, indicating that its impact, while still pertinent, is decreasing. 
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+Simultaneously, other respiratory infections including Influenza, Parainfluenza, RSV, Metapneumovirus, and Rhinovirus have been experiencing a significant increase in outbreak cases. Though respiratory infections such as Influenza are well known to the public, those such as RSV are known to a much lesser extent with only 40% of adults having heard of RSV, and 30% who would definitely get the RSV vaccine. Compared to Influenza, this is a much lesser. (https://www.canada.ca/en/public-health/services/immunization-vaccines/vaccination-coverage/seasonal-influenza-survey-results-2023-2024.html). It is important to note that while these respiratory infections are less deadly than covid (https://www.nature.com/articles/s41598-024-55378-x ), many of these healthcare facilities are long term healthcare facilities, whose populations are more susceptible to these viruses.(https://www.cdc.gov/respiratory-viruses/risk-factors/older-adults.html#:~:text=As%20people%20get%20older%2C%20their,increasing%20sharply%20with%20advancing%20age. )
 
-## Decrease in Covid Percentage of Respiratory Outbreaks
-
-Please don't use these as sub-heading labels - change them to be what your point actually is.
+Altogether, this suggests a slightly greater emphasis should be placed on non-covid respiratory diseases, specifically RSV given it is the only one of the above which has a vaccine available which is not widely known, and outbreak numbers have risen in recent years post-pandemic. By campaigning for increased RSV vaccinations, when outbreaks do occur in healthcare facilities, they will be less deadly.
 
 
 ## Weaknesses and next steps
 
-Weaknesses and next steps should also be included.
+The main limitation of this study is the scale. All data is at the scale of healthcare facilities, thus must remain in the context of such. Extension of these results to the general Toronto population may be misrepresentative, thus to confirm the same trends hold in the general public further research should be conducted with data coming from the general population.
 
 \newpage
 
