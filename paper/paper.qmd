@@ -7,6 +7,9 @@ thanks: "Code and data are available at: [https://github.com/EveHughes/Donaldson
 date: 05/12/2025
 date-format: long
 
+execute:
+  echo: false
+
 abstract: "Through the analysis of Outbreaks in Toronto Healthcare Institutions, this paper seeks to identify the trends in respiratory infections in Toronto during the implementation and later lifting of covid-19 preventatory policies, including general trends in number of outbreaks, and makeup of respiratory infections. Through data visualization, this analysis finds that while reported coronavirus outbreaks have lowered since pandemic times, “secondary” respiratory diseases such as Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus that were at lower levels during the pandemic have begun to rise again. At the same time, covid becomes a lesser percentage of overall respiratory diseases. Given different respiratory diseases require different treatment, these findings are relevant for informing healthcare facilities to place a lesser emphasis on covid-19, etc."
 
 format: pdf
@@ -52,12 +55,9 @@ Below is an example of the raw data from 2019:
 import polars as pl
 import matplotlib.pyplot as plt
 
-raw_data = pl.read_csv("Donalson-Paper/data/01-raw_data/ob_report_" + "2019" + ".csv")
-raw_data = raw_data.head(5)
-example_data = raw_data.to_dict(as_series = False)
-plt.table(example_data)
+raw_data = pl.read_csv("../data/01-raw_data/ob_report_2019.csv")
+raw_data.head(5)
 
-plt.show()
 ```
 
 For this analysis, the variables of interest are the yearly number of outbreaks for Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Over 2019-2024. 
@@ -77,12 +77,9 @@ Below is a sample of the cleaned data:
 import polars as pl
 import matplotlib.pyplot as plt
 
-raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/disease_count.csv")
+raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
 raw_data = raw_data.head(5)
-example_data = raw_data.to_dict(as_series = False)
-plt.table(example_data)
-
-plt.show()
+raw_data
 ```
 ```{python}
 #| label: yearly-count-preview
@@ -91,12 +88,9 @@ plt.show()
 import polars as pl
 import matplotlib.pyplot as plt
 
-raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/yearly_disease_count.csv")
+raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 raw_data = raw_data.head(5)
-example_data = raw_data.to_dict(as_series = False)
-plt.table(example_data)
-
-plt.show()
+raw_data
 ```
 
 Below are the summary statistics for the cleaned yearly count data:
@@ -108,12 +102,9 @@ Below are the summary statistics for the cleaned yearly count data:
 import polars as pl
 import matplotlib.pyplot as plt
 
-raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/yearly_disease_count.csv")
+raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 summary_data = raw_data.describe()
-summary_data = summary_data.to_dict(as_series = False)
-plt.table(summary_data)
-
-plt.show()
+summary_data
 ```
 
 
@@ -121,22 +112,23 @@ plt.show()
 
 Total & respiratory & Coronavirus:
 ```{python}
-#| label: corona-resp-total-graph
+#| label: all-graph
 #| fig-cap: "A line plot on a polar axis"
 
 import polars as pl
 import matplotlib.pyplot as plt
-import np as np
+import numpy as np
 
 t = np.arange(2019, 2025, 1)
-KEYS = ["Coronavirus", "Respiratory", "Total"]
-raw_data = pl.read_csv("Donalson-Paper/data/02-analysis_data/yearly_disease_count.csv")
+KEYS = ["Coronavirus", "Respiratory", "Total", "Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
+raw_data = df.to_dict()
 for key in KEYS:
-  plt.plot(t, raw_data[key], label = key, {'marker': 'o'})
+  plt.plot(t, raw_data[key], marker = 'o', label = key)
 
-plt.set_title("Coronavirus, Respiratory & Total Outbreaks")
-plt.set_xlabel("Year")
-plt.set_ylabel("Outbreak Count")
+plt.title("Coronavirus, Respiratory & Total Outbreaks")
+plt.xlabel("Year")
+plt.ylabel("Outbreak Count")
 plt.grid()
 
 plt.legend()
@@ -149,12 +141,104 @@ The number of cases also fluctuates with the number of respiratory cases and tot
 
 Composition of Respiratory Illness:
 *** insert graph 
+```{python}
+#| label: composition-chart
+#| fig-cap: "A line plot on a polar axis"
+
+### Workspace setup ####
+import numpy as np
+import polars as pl
+import matplotlib.pyplot as plt
+
+#### Read data ####
+df = pl.read_csv("../data/02-analysis_data/disease_count.csv")
+disease_comp = df.to_dict()
+
+### Plot data ####
+t = np.arange(2019, 2025, 1)
+
+KEYS = ["Coronavirus", "Other", "Unknown"]
+
+for key in KEYS:
+  for i in range(6):
+    disease_comp[key][i] = 100*disease_comp[key][i]/disease_comp["Total Agents"][i]
+
+corona = np.array(disease_comp["Coronavirus"])
+other = np.array(disease_comp["Other"])
+unknown = np.array(disease_comp["Unknown"])
+
+ind = np.arange(6)    
+width = 0.35       
+
+p1 = plt.bar(ind, corona, width, color='#d62728', )
+p2 = plt.bar(ind, other, width,  bottom=corona)
+p3 = plt.bar(ind, unknown, width,  bottom=corona+other)
+
+plt.ylabel('Percentage of Causative Agents')
+plt.title('Composition of Respiratory Disease Outbreaks')
+plt.xticks(ind, ('2019', '2020', '2021', '2022', '2023', '2024'))
+plt.yticks(np.arange(0, 110, 10))
+plt.legend((p1[0], p2[0], p3[0]), ('Coronavirus', 'Other', "Unknown"))
+
+plt.show()
+```
+
 Covid / Secondary Disease / Other & Unknown
 
 Influenza:
 Number of cases fall from 2019- 2021, with 0 cases in 2021, and increase thereafter.
 
+```{python}
+#| label: no-corona-graph
+#| fig-cap: "A line plot on a polar axis"
+
+import polars as pl
+import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.arange(2019, 2025, 1)
+KEYS = ["Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
+raw_data = df.to_dict()
+for key in KEYS:
+  plt.plot(t, raw_data[key], marker = 'o', label = key)
+
+plt.title("Other Respiratory Outbreaks")
+plt.xlabel("Year")
+plt.ylabel("Outbreak Count")
+plt.grid()
+
+plt.legend()
+plt.show()
+```
+
+
 Parainfluenza, RSV, Metapneumovirus, and Rhinovirus:
+```{python}
+#| label: no-influenza-graph
+#| fig-cap: "A line plot on a polar axis"
+
+import polars as pl
+import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.arange(2019, 2025, 1)
+KEYS = ["Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
+raw_data = df.to_dict()
+for key in KEYS:
+  plt.plot(t, raw_data[key], marker = 'o', label = key)
+
+plt.title("Other Respiratory Outbreaks")
+plt.xlabel("Year")
+plt.ylabel("Outbreak Count")
+plt.grid()
+
+plt.legend()
+plt.show()
+```
+
+
 Each has specifics, see general trend of lower number & some w/ slight decrease reported in pre-pandemic & pandemic, with a subsequent increase post.
 
 
