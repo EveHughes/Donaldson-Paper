@@ -7,12 +7,15 @@ thanks: "Code and data are available at: [https://github.com/EveHughes/Donaldson
 date: 05/12/2025
 date-format: long
 
+
 execute:
   echo: false
 
 abstract: "Through the analysis of Outbreaks in Toronto Healthcare Institutions, this paper seeks to identify the trends in respiratory infections in Toronto during the implementation and later lifting of covid-19 preventatory policies, including general trends in number of outbreaks, and makeup of respiratory infections. Through data visualization, this analysis finds that while reported coronavirus outbreaks have lowered since pandemic times, “secondary” respiratory diseases such as Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus that were at lower levels during the pandemic have begun to rise again. At the same time, covid becomes a lesser percentage of overall respiratory diseases. Given different respiratory diseases require different treatment, these findings are relevant for informing healthcare facilities to place a lesser emphasis on covid-19, etc."
 
-format: pdf
+format: 
+  pdf: 
+    fig-pos: "H"
 number-sections: true
 bibliography: references.bib
 ---
@@ -133,7 +136,7 @@ summary_data.drop("Year")
 
 # Results
 
-Total & respiratory & Coronavirus:
+## Overall Cases:
 ```{python}
 #| label: all-graph
 #| fig-cap: "A line plot on a polar axis"
@@ -166,15 +169,14 @@ ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 ```
 
-We see that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards
+We see that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards.
 
-The number of cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
+The number of coronavirus cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
 
-Composition of Respiratory Illness:
-*** insert graph 
+## Makeup of Respiratory Outbreaks
 ```{python}
 #| label: composition-chart
-#| fig-cap: "A line plot on a polar axis"
+#| fig-cap: "Makeup of Respiratory Outbreaks from 2019-2024 inclusive"
 
 ### Workspace setup ####
 import numpy as np
@@ -214,11 +216,8 @@ plt.legend((p1[0], p2[0], p3[0]), ('Coronavirus', 'Other', "Unknown"))
 plt.show()
 ```
 
-Covid / Secondary Disease / Other & Unknown
-
-Influenza:
-Number of cases fall from 2019- 2021, with 0 cases in 2021, and increase thereafter.
-
+It becomes evident that since the end of the pandemic, the proportion of Coronavirus outbreaks compared to non-coronavirus outbreaks has been steadily decreasing.
+## Non-Covid Respiratory Outbreaks
 ```{python}
 #| label: no-corona-graph
 #| fig-cap: "A line plot on a polar axis"
@@ -253,9 +252,8 @@ ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
 plt.show()
 ```
 
-
-Each has specifics, see general trend of lower number & some w/ slight decrease reported in pre-pandemic & pandemic, with a subsequent increase post.
-
+We see the number of Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus outbreaks all generally fell to lower levels during the pandemic (2020-2021). 
+Post pandemic (2022-2024), all, with the exception of Influenza, have resurged to greater than pre-pandemic (2019) levels. Influenza outbreaks have also increased since the pandemic, but remain at a lower level comparative to 2019.
 
 # Discussion
 
