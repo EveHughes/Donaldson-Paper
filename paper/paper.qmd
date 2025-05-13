@@ -1,25 +1,35 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Respiratory Disease Outbreaks in Toronto Pre, During, and Post Covid-19 Pandemic "
+subtitle: How Coronavirus and Other Respiratory Diseases have responded to the covid-19 pandemic and Toronto pandemic policies
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
-date: today
+  - Evelyn Hughes
+thanks: "Code and data are available at: [https://github.com/EveHughes/Donaldson-Paper)."
+date: 05/12/2025
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+
+abstract: "Through the analysis of Outbreaks in Toronto Healthcare Institutions, this paper seeks to identify the trends in respiratory infections in Toronto during the implementation and later lifting of covid-19 preventatory policies, including general trends in number of outbreaks, and makeup of respiratory infections. Through data visualization, this analysis finds that while reported coronavirus outbreaks have lowered since pandemic times, “secondary” respiratory diseases such as Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus that were at lower levels during the pandemic have begun to rise again. At the same time, covid becomes a lesser percentage of overall respiratory diseases. Given different respiratory diseases require different treatment, these findings are relevant for informing healthcare facilities to place a lesser emphasis on covid-19, etc."
+
 format: pdf
 number-sections: true
 bibliography: references.bib
 ---
 
-```{r}
-#| include: false
-#| warning: false
-#| message: false
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
 
-library(tidyverse)
-library(palmerpenguins)
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
 ```
 
 
@@ -195,59 +205,6 @@ Weaknesses and next steps should also be included.
 \appendix
 
 # Appendix {-}
-
-
-# Additional data details
-
-# Model details {#sec-model-details}
-
-## Posterior predictive check
-
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
-
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
-
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
-
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
-```
-
-## Diagnostics
-
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
-
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
-
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
-
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
-```
 
 
 
