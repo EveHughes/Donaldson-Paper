@@ -19,6 +19,7 @@ DISEASE_COLUMNS = ["Coronavirus", "Influenza", "Syncytial Virus",
 
 #initializing dictionaries
 disease_count = dict()
+disease_count["Year"] = YEARS
 disease_count["Coronavirus"] = [0, ]*6
 disease_count["Other"] = [0, ]*6
 disease_count["Unknown"] = [0, ]*6

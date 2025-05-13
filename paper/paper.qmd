@@ -54,8 +54,13 @@ Below is an example of the raw data from 2019:
 
 import polars as pl
 import matplotlib.pyplot as plt
+pl.Config.set_tbl_hide_column_data_types(True)  
+pl.Config(tbl_width_chars=1000)
 
 raw_data = pl.read_csv("../data/01-raw_data/ob_report_2019.csv")
+for key in raw_data.columns:
+  if key not in ["_id", "Type of Outbreak", "Causative Agent-1", "Causative Agent-2"]:
+    raw_data = raw_data.drop(key)
 raw_data.head(5)
 
 ```
@@ -76,6 +81,7 @@ Below is a sample of the cleaned data:
 
 import polars as pl
 import matplotlib.pyplot as plt
+pl.Config.set_tbl_hide_column_data_types(True)  
 
 raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
 raw_data = raw_data.head(5)
@@ -87,9 +93,14 @@ raw_data
 
 import polars as pl
 import matplotlib.pyplot as plt
+pl.Config.set_tbl_hide_column_data_types(True)  
+
 
 raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 raw_data = raw_data.head(5)
+raw_data = raw_data.rename({"Coronavirus": "Corona", "Syncytial Virus": "RSV",
+    "Metapneumovirus": "MPV",
+    "Influenza": "Flu", "Rhinovirus": "RV", "Parainfluenza": "PIV"})
 raw_data
 ```
 
@@ -100,11 +111,23 @@ Below are the summary statistics for the cleaned yearly count data:
 #| fig-cap: "A line plot on a polar axis"
 
 import polars as pl
+import polars.selectors as sc
 import matplotlib.pyplot as plt
+pl.Config.set_tbl_hide_column_data_types(True)  
+pl.Config(tbl_width_chars=5)
 
 raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 summary_data = raw_data.describe()
-summary_data
+summary_data = summary_data.filter(pl.col("statistic") != "count")
+summary_data = summary_data.filter(pl.col("statistic") != "null_count")
+
+summary_data = summary_data.rename({"Coronavirus": "Corona", "Syncytial Virus": "RSV",
+    "Metapneumovirus": "MPV",
+    "Influenza": "Flu", "Rhinovirus": "RV", "Parainfluenza": "PIV"})
+
+summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).round(2))
+summary_data.drop("Year")
+
 ```
 
 
@@ -120,18 +143,26 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 t = np.arange(2019, 2025, 1)
-KEYS = ["Coronavirus", "Respiratory", "Total", "Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+KEYS = ["Total", "Respiratory", "Coronavirus", "Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
 df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 raw_data = df.to_dict()
 for key in KEYS:
   plt.plot(t, raw_data[key], marker = 'o', label = key)
 
-plt.title("Coronavirus, Respiratory & Total Outbreaks")
+plt.title("Outbreak Counts")
 plt.xlabel("Year")
 plt.ylabel("Outbreak Count")
 plt.grid()
 
-plt.legend()
+ax = plt.subplot(111)
+
+# Shrink current axis by 20%
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+
+# Put a legend to the right of the current axis
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
 plt.show()
 ```
 
@@ -203,38 +234,22 @@ raw_data = df.to_dict()
 for key in KEYS:
   plt.plot(t, raw_data[key], marker = 'o', label = key)
 
-plt.title("Other Respiratory Outbreaks")
+plt.title("Non-Coronavirus Respiratory Outbreaks")
 plt.xlabel("Year")
 plt.ylabel("Outbreak Count")
 plt.grid()
 
-plt.legend()
-plt.show()
-```
+ax = plt.subplot(111)
 
+# Shrink current axis's height by 10% on the bottom
+box = ax.get_position()
+ax.set_position([box.x0, box.y0 + box.height * 0.1,
+                 box.width, box.height * 0.9])
 
-Parainfluenza, RSV, Metapneumovirus, and Rhinovirus:
-```{python}
-#| label: no-influenza-graph
-#| fig-cap: "A line plot on a polar axis"
+# Put a legend below current axis
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
+          fancybox=True, shadow=True, ncol=5)
 
-import polars as pl
-import matplotlib.pyplot as plt
-import numpy as np
-
-t = np.arange(2019, 2025, 1)
-KEYS = ["Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
-df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
-raw_data = df.to_dict()
-for key in KEYS:
-  plt.plot(t, raw_data[key], marker = 'o', label = key)
-
-plt.title("Other Respiratory Outbreaks")
-plt.xlabel("Year")
-plt.ylabel("Outbreak Count")
-plt.grid()
-
-plt.legend()
 plt.show()
 ```
 
