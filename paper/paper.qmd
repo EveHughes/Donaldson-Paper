@@ -155,8 +155,8 @@ summary_data.drop("Year")
 
 ## Overall Cases:
 ```{python}
-#| label: all-graph
-#| tbl-cap: "A line plot on a polar axis"
+#| label: fig-all_plot
+#| fig-cap: "Yearly Outbreak Count"
 
 import polars as pl
 import matplotlib.pyplot as plt
@@ -186,13 +186,12 @@ ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 ```
 
-We see that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards.
-
-The number of coronavirus cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
+@fig-all_plot showcases that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards.
+Additionally, the number of coronavirus cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
 
 ## Makeup of Respiratory Outbreaks
 ```{python}
-#| label: composition-chart
+#| label: fig-composition_chart
 #| fig-cap: "Makeup of Respiratory Outbreaks from 2019-2024 inclusive"
 
 ### Workspace setup ####
@@ -233,12 +232,12 @@ plt.legend((p1[0], p2[0], p3[0]), ('Coronavirus', 'Other', "Unknown"))
 plt.show()
 ```
 
-It becomes evident that since the end of the pandemic, the proportion of Coronavirus outbreaks compared to non-coronavirus outbreaks has been steadily decreasing.
+From @fig-composition_chart, it becomes evident that since the end of the pandemic the proportion of Coronavirus outbreaks compared to Non-Coronavirus outbreaks has been steadily decreasing.
 
 ## Non-Covid Respiratory Outbreaks
 ```{python}
-#| label: no-corona-graph
-#| fig-cap: "A line plot on a polar axis"
+#| label: fig-no_corona_graph
+#| fig-cap: "Non-Coronavirus Outbreaks"
 
 import polars as pl
 import matplotlib.pyplot as plt
@@ -270,8 +269,8 @@ ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
 plt.show()
 ```
 
-We see the number of Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus outbreaks all generally fell to lower levels during the pandemic (2020-2021). 
-Post pandemic (2022-2024), all, with the exception of Influenza, have resurged to greater than pre-pandemic (2019) levels. Influenza outbreaks have also increased since the pandemic, but remain at a lower level comparative to 2019.
+From @fig-no_corona_graph,  it can be observed that the number of Influenza, Parainfluenza, Respiratory Syncytial Virus, Metapneumovirus, and Rhinovirus outbreaks all generally fell to lower levels during the pandemic (2020-2021). 
+Post-pandemic (2022-2024), all, with the exception of Influenza, have resurged to greater than pre-pandemic (2019) levels. Influenza outbreaks have also increased since the pandemic, but remain at a lower level comparative to their 2019 pre-pandemic level.
 
 # Discussion {#sec-discussion}
 
