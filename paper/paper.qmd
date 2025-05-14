@@ -22,11 +22,11 @@ bibliography: references.bib
 
 # Introduction
 
-On January 25, 2020, the first case of COVID-19 was reported in Canada, in a healthcare facility in Toronto (Cheese 2025). Around two months later on March 17, Doug Ford declared a state of emergency for Ontario, and the closure of facilities such as schools. Additionally, mask mandates, social distancing guidelines, and vaccine cards were all put into place to mitigate the spread of the disease. Later around 2022, these restrictions began to lift. Schools went back in person, etc, etc, etc. (Compartin 2022). As the restrictions lift, it becomes important to characterize the effect they hold upon respiratory diseases both as a whole, and specific diseases.
+On January 25, 2020, the first case of COVID-19 was reported in Canada, in a healthcare facility in Toronto [@covidOverview]. Around two months later on March 17, Doug Ford declared a state of emergency for Ontario, and the closure of facilities such as schools. Additionally, mask mandates, social distancing guidelines, and vaccine cards were all put into place to mitigate the spread of the disease. Later around 2022, these restrictions began to lift. Schools went back in person, etc, etc, etc. [@comartinIlunga2022]. As the restrictions lift, it becomes important to characterize the effect they hold upon respiratory diseases both as a whole, and specific diseases.
 
-Previously, in 2021, research was conducted to examine the effects of covid protocol on other respiratory diseases, finding evidence for a decrease in disease during covid protocol (Groves et al 2021). However, there is a lack of literature examining the effects of the lifting of protocol on these same diseases, and examining the general trends. This research aims to fill that gap, and identify how diseases have reacted to the lifting of covid protocol in relation to both their pre covid (2019), and during covid (2020-2022 ish) levels. Doing such can inform policy that encourages disease-specific preventative measures, and promotion of vaccines to prevent increased outbreaks.
+Previously, in 2021, research was conducted to examine the effects of covid protocol on other respiratory diseases, finding evidence for a decrease in disease during covid protocol[@groves2021]. However, there is a lack of literature examining the effects of the lifting of protocol on these same diseases, and examining the general trends. This research aims to fill that gap, and identify how diseases have reacted to the lifting of covid protocol in relation to both their pre covid (2019), and during covid (2020-2022 ish) levels. Doing such can inform policy that encourages disease-specific preventative measures, and promotion of vaccines to prevent increased outbreaks.
 
-This analysis first examines the trends in the overall number of outbreaks and respiratory outbreaks each year to better understand how the number of outbreaks has been varying over the years and identify general trends. Then, it looks at coronavirus, Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Finally, it examines the trends in percentage of respiratory outbreaks with covid as an agent. Through the data visualization, it was found that while coronavirus outbreaks have been falling since their covid levels, other respiratory diseases have been seeing a subsequent increase in cases post pandemic. Additionally, the percentage of respiratory outbreaks with covid as an agent has been decreasing since the pandemic. So, while an emphasis on covid specific protocols is important, preventative measures for other respiratory diseases, such as RSV vaccines, that were overshadowed during the pandemic should be further encouraged (Public Health Agency of Canada 2024).
+This analysis first examines the trends in the overall number of outbreaks and respiratory outbreaks each year to better understand how the number of outbreaks has been varying over the years and identify general trends. Then, it looks at coronavirus, Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Finally, it examines the trends in percentage of respiratory outbreaks with covid as an agent. Through the data visualization, it was found that while coronavirus outbreaks have been falling since their covid levels, other respiratory diseases have been seeing a subsequent increase in cases post pandemic. Additionally, the percentage of respiratory outbreaks with covid as an agent has been decreasing since the pandemic. So, while an emphasis on covid specific protocols is important, preventative measures for other respiratory diseases, such as RSV vaccines, that were overshadowed during the pandemic should be further encouraged [@publicHealthAgency2024].
 
 In the sections that follow are a description of the data, visualization of the data and discussion of the results.
 
@@ -35,7 +35,7 @@ In the sections that follow are a description of the data, visualization of the 
 
 ## Raw Data
 
-Outbreaks in Toronto Healthcare Institutions data is provided by Toronto Public Health., and is obtained from the OpenData Toronto Portal. The dataset is updated weekly on Thursdays with data as of the Wednesday at 2pm.(https://open.toronto.ca/dataset/outbreaks-in-toronto-healthcare-institutions/ ). 
+Outbreaks in Toronto Healthcare Institutions data is provided by Toronto Public Health., and is obtained from the OpenData Toronto Portal. The dataset is updated weekly on Thursdays with data as of the Wednesday at 2pm.[@outbreakData]. 
 
 The dataset consists of data from years 2016-2025 inclusive, with each containing instances of outbreaks in toronto healthcare institutions. 
 
@@ -44,7 +44,7 @@ The dataset consists of data from years 2016-2025 inclusive, with each containin
 For every record there is an id number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. Below is a preview of this information:
 
 The type of outbreak is listed as Respiratory, Enteric, or Other.
-By the Ministry of Health, a respiratory outbreak is constituted by “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). https://www.toronto.ca/wp-content/uploads/2023/06/9942-Outbreak-Preparedness-ToolkitRespiratoryTableTopFacilitators.pdf
+By the Ministry of Health, a respiratory outbreak is constituted by “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). [@torontoPublicHealth2023].
 
 Healthcare facilities include ....
 
@@ -74,6 +74,7 @@ For this analysis, the variables of interest are the yearly number of outbreaks 
 
 
 ## Analysis Data
+To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], `polars` [@polars]. 
 	
 For each year, the number of cases were aggregated, and were aggregated within each respective category. The diseases of interest were: Coronavirus Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. 
 Instances of coronavirus and covid-19 were grouped together under the title of “coronavirus”, given covid is caused by a coronavirus. Influenza A & B were additionally grouped together under the title “Influenza”. 
@@ -262,7 +263,7 @@ Post pandemic (2022-2024), all, with the exception of Influenza, have resurged t
 
 It becomes apparent that given coronaviruses continue to comprise the greatest proportion of respiratory disease outbreaks in healthcare facilities in Toronto, and coronavirus outbreak trends match those of total respiratory outbreaks from, and total outbreaks from  2019-2024 that coronavirus outbreaks remain the biggest driver of disease outbreaks in Toronto. However, since the pandemic we have seen a decrease in both coronavirus cases, and percentage composition of all agents, indicating that its impact, while still pertinent, is decreasing. 
 
-Simultaneously, other respiratory infections including Influenza, Parainfluenza, RSV, Metapneumovirus, and Rhinovirus have been experiencing a significant increase in outbreak cases. Though respiratory infections such as Influenza are well known to the public, those such as RSV are known to a much lesser extent with only 40% of adults having heard of RSV, and 30% who would definitely get the RSV vaccine. Compared to Influenza, this is a much lesser. (https://www.canada.ca/en/public-health/services/immunization-vaccines/vaccination-coverage/seasonal-influenza-survey-results-2023-2024.html). It is important to note that while these respiratory infections are less deadly than covid (https://www.nature.com/articles/s41598-024-55378-x ), many of these healthcare facilities are long term healthcare facilities, whose populations are more susceptible to these viruses.(https://www.cdc.gov/respiratory-viruses/risk-factors/older-adults.html#:~:text=As%20people%20get%20older%2C%20their,increasing%20sharply%20with%20advancing%20age. )
+Simultaneously, other respiratory infections including Influenza, Parainfluenza, RSV, Metapneumovirus, and Rhinovirus have been experiencing a significant increase in outbreak cases. Though respiratory infections such as Influenza are well known to the public, those such as RSV are known to a much lesser extent with only 40% of adults having heard of RSV, and 30% who would definitely get the RSV vaccine. Compared to Influenza, this is a much lesser. [@torontoPublicHealth2023]. It is important to note that while these respiratory infections are less deadly than covid [@grangier2024], many of these healthcare facilities are long term healthcare facilities, whose populations are more susceptible to these viruses [@cdc2024].
 
 Altogether, this suggests a slightly greater emphasis should be placed on non-covid respiratory diseases, specifically RSV given it is the only one of the above which has a vaccine available which is not widely known, and outbreak numbers have risen in recent years post-pandemic. By campaigning for increased RSV vaccinations, when outbreaks do occur in healthcare facilities, they will be less deadly.
 
@@ -280,6 +281,6 @@ The main limitation of this study is the scale. All data is at the scale of heal
 \newpage
 
 
-# References
+# References {-}
 
 
