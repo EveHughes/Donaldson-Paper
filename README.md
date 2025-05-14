@@ -10,7 +10,7 @@ The repo is structured as:
 
 -   `data/raw_data` contains the raw data as obtained from Outbreaks in Toronto Healthcare Institutions.
 -   `data/analysis_data` contains the cleaned dataset that was constructed.
--   `other` contains initial sketches of data.
+-   `sketches` contains initial sketches of data.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
 -   `scripts` contains the Python scripts used to simulate, download, clean, and test data.
 
