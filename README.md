@@ -1,30 +1,28 @@
-# Starter folder
+# Respiratory Outbreaks Trends in Toronto Healthcare Institutions Across the COVID-19 Pandemic
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
-
+This paper utilizes data visualization to explore the impact of the lifting of pandemic policies on respiratory outbreaks in Toronto healthcare facilities.
 
 ## File Structure
 
 The repo is structured as:
 
--   `data/raw_data` contains the raw data as obtained from X.
+-   `data/raw_data` contains the raw data as obtained from Outbreaks in Toronto Healthcare Institutions.
 -   `data/analysis_data` contains the cleaned dataset that was constructed.
--   `model` contains fitted models. 
--   `other` contains relevant literature, details about LLM chat interactions, and sketches.
+-   `other` contains initial sketches of data.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
--   `scripts` contains the R scripts used to simulate, download and clean data.
+-   `scripts` contains the Python scripts used to simulate, download, clean, and test data.
 
+## Reproducing this Paper
+
+1. clone this repository
+within /scripts:
+3. run 02-download_data.py
+4. run 03-clean_data.py
+within /paper:
+5. open paper.qmd and render file
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract and introduction were written with the help of ChatHorse and the entire chat history is available in inputs/llms/usage.txt.
-
-## Some checks
-
-- [ ] Change the rproj file name so that it's not starter_folder.Rproj
-- [ ] Change the README title so that it's not Starter folder
-- [ ] Remove files that you're not using
-- [ ] Update comments in R scripts
-- [ ] Remove this checklist
+LLMs were not utilized in this analysis.
