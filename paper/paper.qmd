@@ -74,7 +74,7 @@ For this analysis, the variables of interest are the yearly number of outbreaks 
 
 
 ## Analysis Data
-To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], `polars` [@polars]. 
+To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], and `polars` [@polars]. 
 	
 For each year, the number of cases were aggregated, and were aggregated within each respective category. The diseases of interest were: Coronavirus Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. 
 Instances of coronavirus and covid-19 were grouped together under the title of “coronavirus”, given covid is caused by a coronavirus. Influenza A & B were additionally grouped together under the title “Influenza”. 

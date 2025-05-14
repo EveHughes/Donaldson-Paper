@@ -68,7 +68,7 @@ for i in range(2019, 2025):
         else:
             disease_count["Other"][index] += 1
         
-        if disease_two != None and disease_two != "None":
+        if disease_two != None and disease_two != "" and disease_two != "None":
             disease_count["Total Agents"][index] += 1
             if "covid" in disease_two.lower() or "corona" in disease_two.lower():
                 disease_count["Coronavirus"][index] += 1
