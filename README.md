@@ -17,11 +17,9 @@ The repo is structured as:
 ## Reproducing this Paper
 
 1. clone this repository
-within /scripts:
-3. run 02-download_data.py
-4. run 03-clean_data.py
-within /paper:
-5. open paper.qmd and render file
+2. within scripts, run 02-download_data.py
+3. within scripts, run 03-clean_data.py
+4. within paper, open paper.qmd and render file
 
 ## Statement on LLM usage
 
