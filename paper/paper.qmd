@@ -1,5 +1,5 @@
 ---
-title: "Respiratory Outbreaks Trends in Toronto Healthcare Institutions Across the COVID-19 Pandemic "
+title: "Respiratory Outbreak Trends in Toronto Healthcare Institutions Across the COVID-19 Pandemic "
 subtitle: "The Response of Coronavirus and Other Respiratory Diseases to COVID-19 Pandemic Policies"
 author: 
   - Evelyn Hughes
@@ -77,7 +77,7 @@ For this analysis, the variables of interest are the yearly number of outbreaks 
 
 ## Analysis Data
 ### Yearly Outbreak Count {#sec-yearly_count}
-To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], and `polars` [@polars]. 
+To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], and `polars` [@polars]. 
 	
 For each year, the number of cases for each causative agent was aggregated. The causative agents of interest were: Coronavirus, Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV). 
 Instances of Coronavirus and COVID-19 were grouped together under the category “Coronavirus”. Influenza A and Influenza B were additionally grouped together under the category “Influenza”. 
@@ -191,8 +191,11 @@ import numpy as np
 
 #plotting data & adding labels
 t = np.arange(2019, 2025, 1)
-KEYS = ["Total", "Respiratory", "Coronavirus", "Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+KEYS = ["Total", "Respiratory", "Coronavirus", "Influenza", "RSV", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
 df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
+
+df = df.rename({"Syncytial Virus": "RSV"})
+
 raw_data = df.to_dict()
 for key in KEYS:
   plt.plot(t, raw_data[key], marker = 'o', label = key)
@@ -211,8 +214,8 @@ ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 ```
 
-@fig-all_plot showcases that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards.
-Additionally, the number of Coronavirus cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
+@fig-all_plot showcases that the annual total number of outbreaks fluctuates with the annual number of respiratory outbreaks. The count of both of these has increased from 2019 to 2022, and began to decrease afterwards.
+Additionally, the number of Coronavirus outbreaks also fluctuates with the number of respiratory outbreaks and total outbreaks, following the same trend described above.
 
 ## Makeup of Respiratory Outbreaks
 ```{python}
@@ -271,8 +274,10 @@ import numpy as np
 
 #plot data
 t = np.arange(2019, 2025, 1)
-KEYS = ["Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
+KEYS = ["Influenza", "RSV", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
 df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
+df = df.rename({"Syncytial Virus": "RSV"})
+
 raw_data = df.to_dict()
 for key in KEYS:
   plt.plot(t, raw_data[key], marker = 'o', label = key)
