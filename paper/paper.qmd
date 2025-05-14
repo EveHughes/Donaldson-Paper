@@ -10,7 +10,7 @@ date-format: long
 execute:
   echo: false
 
-abstract: "Through the analysis of Outbreaks in Toronto Healthcare Institutions (2019-2025), this paper seeks to identify the trends in respiratory infections in Toronto healthcare institutions during the implementation and later lifting of COVID-19 preventative policies. Through data visualization this analysis finds that while reported Coronavirus outbreaks have decreased since the pandemic, non-Coronavirus respiratory outbreaks such as Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) outbreaks have risen from the lower levels they were at during the pandemic. Concurrently, Coronaviruses have become a lesser percentage of respiratory causative agents in outbreaks. Given different respiratory diseases require different treatment, testing, and prevention, these findings are relevant for informing healthcare facilities of steps to take to mitigate and manage outbreaks."
+abstract:  "Through the analysis of Outbreaks in Toronto Healthcare Institutions (2019-2025), this paper seeks to identify the trends in respiratory infections in Toronto healthcare institutions during the implementation and later lifting of COVID-19 preventative policies. Through data visualization this analysis finds that while reported Coronavirus outbreaks have decreased since the pandemic, non-Coronavirus respiratory outbreaks such as Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) outbreaks have risen from the lower levels they were at during the pandemic. Concurrently, Coronaviruses have become a lesser percentage of respiratory causative agents in outbreaks. Given that different respiratory diseases require different treatment, testing, and prevention, these findings are relevant for informing healthcare facilities of steps to take to mitigate and manage outbreaks."
 
 format: 
   pdf: 
@@ -21,76 +21,86 @@ bibliography: references.bib
 
 # Introduction
 
-On January 25, 2020, the first case of COVID-19 was reported in Canada in a healthcare facility in Toronto [@covidOverview]. Around two months later on March 17, Doug Ford declared a state of emergency for Ontario and the closure of facilities such as schools. Mask mandates, social distancing guidelines, and vaccine cards were all put into place to mitigate the spread of the disease. Later around 2022, these restrictions slowly began to lift. On March 14, 2022 vaccination requirements were lifted, on March 21, 2022 social distancing regulations were lifted, and on April 27, 2022 all remaining COVID-19 regulatory policies and restrictions expired[@comartinIlunga2022]. Given changes in outbreak count and type heavily impact healthcare facilities, it becomes important to characterize the effect of the lifting of COVID-19 regulations on respiratory diseases as a whole, and specific respiratory diseases.
+On January 25, 2020, the first case of COVID-19 was reported in Canada in a healthcare facility in Toronto [@covidOverview]. Around two months later, on March 17, Doug Ford declared a state of emergency for Ontario and the closure of facilities such as schools. Mask mandates, social distancing guidelines, and vaccine cards were all implemented to mitigate the spread of the disease. Later, around 2022, these restrictions slowly began to lift. On March 14, 2022, vaccination requirements were lifted, on March 21, 2022, social distancing regulations were lifted, and on April 27, 2022, all remaining COVID-19 regulatory policies and restrictions expired[@comartinIlunga2022]. Given that changes in outbreak count and type heavily impact healthcare facilities, it becomes important to characterize the effect of the lifting of COVID-19 regulations on respiratory diseases as a whole, as well as specific respiratory diseases.
 
-Previously, in 2021, research was conducted to examine the effects of COVID-19 protocol on non-Coronavirus respiratory diseases, finding evidence for a decrease in disease during the restrictions [@groves2021]. However, there is a lack of literature examining the effects of the lifting of protocol on these same respiratory diseases. This paper aims to fill that gap, and identify how diseases have reacted to the lifting of covid protocol in relation to both their pre covid (2019), and during covid (2020-2022 ish) levels. Doing such can inform policy that encourages disease-specific preventative measures, and promotion of vaccines to prevent increased outbreaks.
+Previously, in 2021, research was conducted to examine the effects of COVID-19 protocol on non-Coronavirus respiratory diseases, finding evidence for a decrease in disease during the restrictions [@groves2021]. However, there is a lack of literature examining the effects of lifting the protocol on these same respiratory diseases. This paper aims to improve upon that deficit and identify how diseases have reacted to the lifting of COVID-19 protocol in relation to both their pre-pandemic (2019) and pandemic (2020-2022) levels. Doing such can inform policy that encourages disease-specific preventative measures and promotion of vaccines to prevent increased outbreaks.
 
-This analysis first examines the trends in the overall number of outbreaks and respiratory outbreaks each year to better understand how the number of outbreaks has been varying over the years and identify general trends. Then, it looks at coronavirus, Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Finally, it examines the trends in percentage of respiratory outbreaks with covid as an agent. Through the data visualization, it was found that while coronavirus outbreaks have been falling since their covid levels, other respiratory diseases have been seeing a subsequent increase in cases post pandemic. Additionally, the percentage of respiratory outbreaks with covid as an agent has been decreasing since the pandemic. So, while an emphasis on covid specific protocols is important, preventative measures for other respiratory diseases, such as RSV vaccines, that were overshadowed during the pandemic should be further encouraged [@publicHealthAgency2024].
+This analysis first examines the trends in the overall number of outbreaks and respiratory outbreaks each year to better understand how the number of outbreaks has been varying over the years and identify general trends. Then, it looks at coronavirus, Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Finally, it examines the trends in the percentage of respiratory outbreaks with COVID-19 or Coronavirus as an agent. 
 
-In what follows is a description of the data ([@sec-data]), visualization of the data ([@sec-results]), and an analysis of the visualization ([@sec-discussion]).
+Through the data visualization, it was found that while Coronavirus outbreaks have been falling since their pandemic levels, other respiratory diseases have been seeing a subsequent increase in cases post-pandemic. Additionally, the percentage of respiratory outbreaks with COVID-19 or Coronavirus as an agent has decreased since the pandemic. So, while an emphasis on COVID-specific protocols is important, preventative measures for other respiratory diseases, such as RSV vaccines, that were overshadowed during the pandemic should be further encouraged [@publicHealthAgency2024].
+
+In what follows is a description of the data ([@sec-data]), a visualization of the data ([@sec-results]), and an analysis of the visualization ([@sec-discussion]).
 
 
 # Data {#sec-data}
 
 ## Raw Data
 
-Outbreaks in Toronto Healthcare Institutions data is provided by Toronto Public Health., and is obtained from the OpenData Toronto Portal. The dataset is updated weekly on Thursdays with data as of the Wednesday at 2pm.[@outbreakData]. The dataset consists of data from years 2016-2025 inclusive, with each containing instances of outbreaks in toronto healthcare institutions during that year. 
+Outbreaks in Toronto Healthcare Institutions data is provided by Toronto Public Health, and is obtained from the OpenData Toronto Portal. The dataset is updated weekly on Thursdays [@outbreakData]. The dataset consists of data from years 2016-2025 inclusive, with each containing instances of outbreaks in Toronto healthcare institutions during that year. 
 
-Each record includes an id number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. @tbl-raw_preview contains a preview of this information.
+Each record includes an ID number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. @tbl-raw_preview contains a preview of this information.
 
 ```{python}
 #| label: tbl-raw_preview
 #| tbl-cap: "2019 Raw Data Preview"
 
+#set up
 import polars as pl
 import matplotlib.pyplot as plt
 pl.Config.set_tbl_hide_column_data_types(True)  
 pl.Config(tbl_width_chars=1000)
 
+#reading in of data & removing unneeded info
 raw_data = pl.read_csv("../data/01-raw_data/ob_report_2019.csv")
 for key in raw_data.columns:
   if key not in ["_id", "Type of Outbreak", "Causative Agent-1", "Causative Agent-2"]:
     raw_data = raw_data.drop(key)
+
+#creating table
 raw_data.head(5)
 
 ```
 
-Healthcare facilities are defined as any institution which provides a healthcare service, including hospitals and long term care homes.
+Healthcare facilities are defined as any institution that provides a healthcare service, including hospitals and long-term care homes.
 
 According to the Ontario Ministry of Health, a respiratory outbreak is defined as “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). [@torontoPublicHealth2023].
 
-The type of outbreak is categorized as Respiratory, Enteric, or Other. 
-Respiratory outbreaks refer to outbreaks that affect the respiratory system (eg. nose, lungs)
+The type of outbreak is categorized as Respiratory, Enteric, or Other. 
+Respiratory outbreaks refer to outbreaks that affect the respiratory system.
 Enteric outbreaks refer to outbreaks that affect the gastrointestinal tract.
 
 Causative Agent-1 is either a specific agent (ie: Coronavirus), or marked as "Unable to identify".
-Causative Agent-2 is either a specific agent, or marked as "".
+Causative Agent-2 is either a specific agent or marked as "".
 
-For this analysis, the variables of interest are the yearly number of outbreaks for Coronavirus/COVID-19, Influenza (Flu), Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) over the years of 2019-2024. 
+For this analysis, the variables of interest are the yearly number of outbreaks for Coronavirus/COVID-19, Influenza (Flu), Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) over the years 2019-2024. 
 
 
 ## Analysis Data
-To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], and `polars` [@polars]. 
+### Yearly Outbreak Count {#sec-yearly_count}
+To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], and `polars` [@polars]. 
 	
-For each year, the number of cases for each causative agent were aggregated. The causative agents of interest were: Coronavirus, Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV). 
-Instances of Coronavirus and COVID-19 were grouped together under the category “Coronavirus”. Influenza A and Influenza B were additionally grouped together under the category “Influenza”. 
+For each year, the number of cases for each causative agent was aggregated. The causative agents of interest were: Coronavirus, Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV). 
+Instances of Coronavirus and COVID-19 were grouped together under the category “Coronavirus”. Influenza A and Influenza B were additionally grouped together under the category “Influenza”. 
 @tbl-yearly_count_preview shows the data, and @tbl-yearly_count_summary shows the summary statistics.
-
 
 
 ```{python}
 #| label: tbl-yearly_count_preview
 #| tbl-cap: "Yearly Outbreak Count"
 
+#set up
 import polars as pl
 import matplotlib.pyplot as plt
 pl.Config.set_tbl_hide_column_data_types(True)  
 
+#reading in & reformatting
 raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 raw_data = raw_data.head(5)
 raw_data = raw_data.rename({"Coronavirus": "Corona", "Syncytial Virus": "RSV",
     "Metapneumovirus": "MPV",
     "Influenza": "Flu", "Rhinovirus": "RV", "Parainfluenza": "PIV"})
+
+#creating table
 raw_data
 ```
 
@@ -99,12 +109,14 @@ raw_data
 #| label: tbl-yearly_count_summary
 #| tbl-cap: "Yearly Outbreak Count Summary Statistics"
 
+#set up
 import polars as pl
 import polars.selectors as sc
 import matplotlib.pyplot as plt
 pl.Config.set_tbl_hide_column_data_types(True)  
 pl.Config(tbl_width_chars=5)
 
+#reading in & reformatting
 raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 summary_data = raw_data.describe()
 summary_data = summary_data.filter(pl.col("statistic") != "count")
@@ -114,22 +126,30 @@ summary_data = summary_data.rename({"Coronavirus": "Corona", "Syncytial Virus": 
     "Metapneumovirus": "MPV",
     "Influenza": "Flu", "Rhinovirus": "RV", "Parainfluenza": "PIV"})
 
+#rounding data
 summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).round(2))
+
+#creating table
 summary_data.drop("Year")
 
 ```
 
+It is important to note that in @tbl-yearly_count_preview, non-Coronavirus respiratory causative agents in 2021 had extremely low outbreak counts. While this could be representative of genuinely surpressed levels of other respiratory outbreaks due to increased COVID-19 cases, it could be indicative of a reporting issue. Further research should be conducted to clarify, though such research is beyond the scope of this paper.
 
-Additionally, for each year the total number of non-null respiratory causative agents was aggregated, as well as the number of Coronavirus causative agents, non-Coronavirus respiratory causative agents, and unknown respiratory causative agents. @tbl-disease_count_preview shows the cleaned data, and @tbl-disease_count_summary shows the summary statistics.
+
+### Composition Respiratory Disease Causative Agents
+Additionally, for each year, the total number of non-null respiratory causative agents was aggregated, as well as the number of Coronavirus causative agents, non-Coronavirus respiratory causative agents, and unknown respiratory causative agents. @tbl-disease_count_preview shows the cleaned data, and @tbl-disease_count_summary shows the summary statistics.
 
 ```{python}
 #| label: tbl-disease_count_preview
-#| tbl-cap: "Count of Respiratory Disease by Type"
+#| tbl-cap: "Count of Respiratory Disease by Coronavirus, Non-Coronavirus, or Other"
 
+#set up
 import polars as pl
 import matplotlib.pyplot as plt
 pl.Config.set_tbl_hide_column_data_types(True)  
 
+#reading in data & creating table
 raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
 raw_data = raw_data.head(6)
 raw_data
@@ -138,16 +158,22 @@ raw_data
 ```{python}
 #| label: tbl-disease_count_summary
 #| tbl-cap: "Respiratory Disease Composition Summary Statistics"
+
+#set up
 import polars as pl
 import polars.selectors as sc
 pl.Config.set_tbl_hide_column_data_types(True)  
 
+#reading in data & reformatting
 raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
 summary_data = raw_data.describe()
 summary_data = summary_data.filter(pl.col("statistic") != "count")
 summary_data = summary_data.filter(pl.col("statistic") != "null_count")
 
+#rounding all data
 summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).round(2))
+
+#creating table
 summary_data.drop("Year")
 ```
 
@@ -158,52 +184,51 @@ summary_data.drop("Year")
 #| label: fig-all_plot
 #| fig-cap: "Yearly Outbreak Count"
 
+#set up
 import polars as pl
 import matplotlib.pyplot as plt
 import numpy as np
 
+#plotting data & adding labels
 t = np.arange(2019, 2025, 1)
 KEYS = ["Total", "Respiratory", "Coronavirus", "Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
 df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 raw_data = df.to_dict()
 for key in KEYS:
   plt.plot(t, raw_data[key], marker = 'o', label = key)
-
 plt.title("Outbreak Counts")
 plt.xlabel("Year")
 plt.ylabel("Outbreak Count")
 plt.grid()
 
+# formatting legend
 ax = plt.subplot(111)
-
-# Shrink current axis by 20%
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-
-# Put a legend to the right of the current axis
 ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
+#showing
 plt.show()
 ```
 
 @fig-all_plot showcases that the total number of cases fluctuates with the number of respiratory cases, with number of outbreaks increasing since 2019 to 2022, and beginning to decrease afterwards.
-Additionally, the number of coronavirus cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
+Additionally, the number of Coronavirus cases also fluctuates with the number of respiratory cases and total cases, following the same trend described above.
 
 ## Makeup of Respiratory Outbreaks
 ```{python}
 #| label: fig-composition_chart
 #| fig-cap: "Makeup of Respiratory Outbreaks from 2019-2024 inclusive"
 
-### Workspace setup ####
+#set up
 import numpy as np
 import polars as pl
 import matplotlib.pyplot as plt
 
-#### Read data ####
+# read data
 df = pl.read_csv("../data/02-analysis_data/disease_count.csv")
 disease_comp = df.to_dict()
 
-### Plot data ####
+# Plot data
 t = np.arange(2019, 2025, 1)
 
 KEYS = ["Coronavirus", "Other", "Unknown"]
@@ -239,10 +264,12 @@ From @fig-composition_chart, it becomes evident that since the end of the pandem
 #| label: fig-no_corona_graph
 #| fig-cap: "Non-Coronavirus Outbreaks"
 
+# set up
 import polars as pl
 import matplotlib.pyplot as plt
 import numpy as np
 
+#plot data
 t = np.arange(2019, 2025, 1)
 KEYS = ["Influenza", "Syncytial Virus", "Metapneumovirus", "Rhinovirus", "Parainfluenza"]
 df = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
@@ -255,14 +282,11 @@ plt.xlabel("Year")
 plt.ylabel("Outbreak Count")
 plt.grid()
 
+# Set up legend
 ax = plt.subplot(111)
-
-# Shrink current axis's height by 10% on the bottom
 box = ax.get_position()
 ax.set_position([box.x0, box.y0 + box.height * 0.1,
                  box.width, box.height * 0.9])
-
-# Put a legend below current axis
 ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
           fancybox=True, shadow=True, ncol=5)
 
@@ -274,16 +298,18 @@ Post-pandemic (2022-2024), all, with the exception of Influenza, have resurged t
 
 # Discussion {#sec-discussion}
 
-It is apparent that given Coronaviruses outbreaks remain the most prominent driver of outbreaks in Toronto healthcare facilities post-pandemic. They continue to comprise the greatest proportion of respiratory disease outbreaks in healthcare facilities in Toronto, and since pandemic times, trends in Coronavirus outbreak count align with those of total respiratory outbreaks and total outbreaks. However, since the pandemic the annual number of Coronavirus outbreaks and percentage Coronavirus outbreaks comprising total respiratory outbreak agents has declined, indicating that their impact is diminishing.
+It is apparent that Coronavirus outbreaks remain the most prominent driver of outbreaks in Toronto healthcare facilities post-pandemic. They continue to comprise the greatest proportion of respiratory disease outbreaks in healthcare facilities in Toronto, and since pandemic times, trends in the Coronavirus outbreak count align with those of total respiratory outbreaks and total outbreaks. However, since the pandemic, the annual number of Coronavirus outbreaks and percentage of Coronavirus outbreaks comprising total respiratory outbreak agents has declined, indicating that their impact is diminishing.
 
-Simultaneously, Influenza, Parainfluenza, RSV, Metapneumovirus, and Rhinovirus have been experiencing an increase in outbreak cases post-pandemic. While Influenza is well known, the public is much less familiar with other respiratory outbreak agents, particularly RSV. Only 40% of adults report having heard of RSV, and only 30% would definitely get the RSV vaccine. Comparatively, 43% of adults got an Influenza vaccine in the 2023-2024 season [@torontoPublicHealth2023]. It is important to note that while non-Coronavirus respiratory infections such as RSV are less deadly than Coronavirus [@grangier2024], many of the healthcare facilities experiencing outbreaks are long term healthcare facilities whose populations are more susceptible to these infections [@cdc2024].
+Simultaneously, Influenza, Parainfluenza, RSV, Metapneumovirus, and Rhinovirus have been experiencing an increase in outbreak cases post-pandemic. While Influenza is well known, the public is much less familiar with other respiratory outbreak agents, particularly RSV. Only 40% of adults report having heard of RSV, and only 30% would definitely get the RSV vaccine. Comparatively, 43% of adults got an Influenza vaccine in the 2023-2024 season [@torontoPublicHealth2023]. It is important to note that while non-Coronavirus respiratory infections, such as RSV, are less deadly than Coronavirus [@grangier2024], many of the healthcare facilities experiencing outbreaks are long-term healthcare facilities whose populations are more susceptible to these infections [@cdc2024].
 
-The lack of knowledge surrounding non-Coronavirus and Influenza respiratory causative agents, their rising outbreak numbers, and susceptibility of healthcare institution population suggests a greater emphasis should be placed on them. RSV in particular should be given a greater emphasis, given it is the only one of the non-Coronavirus and non-Influenza respiratory agents with a vaccine available. By increasing awareness of RSV and encouraging RSV vaccinations, RSV outbreaks will be less likely to occur in healthcare facilities, and when they do occur, they will be less severe.
+The lack of knowledge surrounding non-Coronavirus and Influenza respiratory causative agents, their rising outbreak numbers, and susceptibility of the healthcare institution population suggests a greater emphasis should be placed on them. RSV in particular should be given a greater emphasis, given it is the only one of the non-Coronavirus and non-Influenza respiratory agents with a vaccine available. By increasing awareness of RSV and encouraging RSV vaccinations, RSV outbreaks will be less likely to occur in healthcare facilities, and when they do occur, they will be less severe.
 
 
 ## Weaknesses and next steps
 
-The main limitation of this study is the limitation of focus to healthcare facilities. All data is from healthcare facilities, thus must remain in the context of such. The extension of these results to the general Toronto population may be misrepresentative, thus to confirm the same trends hold in the general public, further research should be conducted with data coming from the general Toronto public.
+The main limitation of this study is the restriction of focus to healthcare facilities. All data is from healthcare facilities, hence, findings must remain in the context of healthcare facilities. The extension of these results to the general Toronto population may be misrepresentative. Thus, to confirm the same trends hold in general, further research should be conducted with data coming from the general Toronto public.
+
+Additionally, as mentioned in [@sec-yearly_count], the extremely low reported outbreak counts of non-Coronavirus causative agents in 2021 point to potential issues with the validity of the data. Further research should be conducted to determine the cause of these low numbers and assess the validity of the dataset.
 
 
 \newpage
