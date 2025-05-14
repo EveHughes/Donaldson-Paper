@@ -1,17 +1,17 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Downloads and saves the data from Outbreaks in Toronto Healthcare Institutions
+# Author: Evelyn Hughes
+# Date: 14 May 2025
+# Contact: evelyn.hughes@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
-
+# Pre-requisites: 
+  # - `polars` must be installed (pip install polars)
+  # - `numpy` must be installed (pip install numpy)
+  # - `io` must be installed (pip install io)
 
 #### Workspace setup ####
 import polars as pl
 from io import StringIO
-import csv
 
 #### Download data ####
 import requests

@@ -1,9 +1,9 @@
 #### Preamble ####
 # Purpose: Simulates a yearly_dataset of Australian electoral divisions, including the 
   # state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
+# Author: Evelyn Hughes
+# Date: 13 May 2025
+# Contact: evelyn.hughes@utoronto.ca
 # License: MIT
 # Pre-requisites: 
   # - `polars` must be installed (pip install polars)
