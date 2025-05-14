@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
+# Purpose: Simulates a yearly_dataset of Australian electoral divisions, including the 
   # state and party that won each division.
 # Author: Rohan Alexander
 # Date: 26 September 2024
@@ -21,31 +21,52 @@ np.random.seed(853)
 YEARS = ["2019", "2020", "2021", "2022", "2023", "2024"]
 DISEASE_COLUMNS = ["Coronavirus", "Influenza", "Syncytial Virus", 
                    "Metapneumovirus", "Rhinovirus", "Parainfluenza", "Respiratory", "Total"]
+COMPOSITION_COLUMNS = ["Coronavirus", "Other", "Unknown"]
 
-# Generate the outbreak data using numpy and polars
+# Generate the yearly outbreak data using numpy and polars
 #creating dictionary w/ columns
-data = dict()
-data["Year"] = YEARS
+yearly_data = dict()
+yearly_data["Year"] = YEARS
 for column in DISEASE_COLUMNS:
-  data[column] = [0, ]*6
-data["Respiratory"] =[0, ]*6
-data["Total"] = [0, ]*6
+  yearly_data[column] = [0, ]*6
+yearly_data["Respiratory"] =[0, ]*6
+yearly_data["Total"] = [0, ]*6
 
-#generating random values for data
+#generating random values for yearly data
 for i in range(6):
   respiratory_count = 0
   for disease in DISEASE_COLUMNS:
     outbreak_count = int(100*np.random.rand())
-    data[disease][i] = outbreak_count
+    yearly_data[disease][i] = outbreak_count
     respiratory_count += outbreak_count
 
   respiratory_count += int(100*np.random.rand())
-  data["Respiratory"][i] = respiratory_count
+  yearly_data["Respiratory"][i] = respiratory_count
   total_count = respiratory_count + int(100*np.random.rand())
-  data["Total"][i] = total_count
+  yearly_data["Total"][i] = total_count
 
-# Create a polars DataFrame
-analysis_data = pl.DataFrame(data)
 
-#### Save data ####
-analysis_data.write_csv("data/00-simulated_data/simulated_data.csv")
+# Generate disease count data using numpy and polars
+#creating dictionary w/ columns
+disease_count = dict()
+disease_count["Year"] = YEARS
+for column in COMPOSITION_COLUMNS:
+  disease_count[column] = [0, ]*6
+disease_count["Total"] = [0, ]*6
+
+#generating random values for disease count
+for i in range(6):
+  total_count = 0
+  for disease in COMPOSITION_COLUMNS:
+    outbreak_count = int(100*np.random.rand())
+    disease_count[disease][i] = outbreak_count
+    total_count += outbreak_count
+  disease_count["Total"][i] = total_count
+
+# Create a polars yearly_dataFrame
+analysis_yearly_data = pl.DataFrame(yearly_data)
+analysis_count_data = pl.DataFrame(disease_count)
+
+#### Save yearly_data ####
+analysis_yearly_data.write_csv("data/00-simulated_data/simulated_yearly_count.csv")
+analysis_count_data.write_csv("data/00-simulated_data/simulated_disease_count.csv")

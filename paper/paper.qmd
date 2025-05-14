@@ -1,17 +1,16 @@
 ---
-title: "Respiratory Disease Outbreaks in Toronto Pre, During, and Post Covid-19 Pandemic "
-subtitle: How Coronavirus and Other Respiratory Diseases have responded to the covid-19 pandemic and Toronto pandemic policies
+title: "Respiratory Outbreaks Trends in Toronto Healthcare Institutions Across the COVID-19 Pandemic "
+subtitle: "The Response of Coronavirus and Other Respiratory Diseases to COVID-19 Pandemic Policies"
 author: 
   - Evelyn Hughes
-thanks: "Code and data are available at: [https://github.com/EveHughes/Donaldson-Paper)."
+thanks: "Code and data are available at: [https://github.com/EveHughes/Donaldson-Paper]."
 date: 05/12/2025
 date-format: long
-
 
 execute:
   echo: false
 
-abstract: "Through the analysis of Outbreaks in Toronto Healthcare Institutions, this paper seeks to identify the trends in respiratory infections in Toronto during the implementation and later lifting of covid-19 preventatory policies, including general trends in number of outbreaks, and makeup of respiratory infections. Through data visualization, this analysis finds that while reported coronavirus outbreaks have lowered since pandemic times, “secondary” respiratory diseases such as Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus that were at lower levels during the pandemic have begun to rise again. At the same time, covid becomes a lesser percentage of overall respiratory diseases. Given different respiratory diseases require different treatment, these findings are relevant for informing healthcare facilities to place a lesser emphasis on covid-19, etc."
+abstract: "Through the analysis of Outbreaks in Toronto Healthcare Institutions (2019-2025), this paper seeks to identify the trends in respiratory infections in Toronto healthcare institutions during the implementation and later lifting of COVID-19 preventative policies. Through data visualization this analysis finds that while reported Coronavirus outbreaks have decreased since the pandemic, non-Coronavirus respiratory outbreaks such as Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) outbreaks have risen from the lower levels they were at during the pandemic. Concurrently, Coronaviruses have become a lesser percentage of respiratory causative agents in outbreaks. Given different respiratory diseases require different treatment, testing, and prevention, these findings are relevant for informing healthcare facilities of steps to take to mitigate and manage outbreaks."
 
 format: 
   pdf: 
@@ -54,8 +53,8 @@ Causative Agent-2 is either a specific agent, or "None".
 Below is an example of the raw data from 2019:
 
 ```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
+#| label: table
+#| fig-cap: "2019 Raw Data"
 
 import polars as pl
 import matplotlib.pyplot as plt
