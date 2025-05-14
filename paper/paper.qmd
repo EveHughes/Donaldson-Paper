@@ -34,27 +34,13 @@ In what follows is a description of the data ([@sec-data]), visualization of the
 
 ## Raw Data
 
-Outbreaks in Toronto Healthcare Institutions data is provided by Toronto Public Health., and is obtained from the OpenData Toronto Portal. The dataset is updated weekly on Thursdays with data as of the Wednesday at 2pm.[@outbreakData]. 
+Outbreaks in Toronto Healthcare Institutions data is provided by Toronto Public Health., and is obtained from the OpenData Toronto Portal. The dataset is updated weekly on Thursdays with data as of the Wednesday at 2pm.[@outbreakData]. The dataset consists of data from years 2016-2025 inclusive, with each containing instances of outbreaks in toronto healthcare institutions during that year. 
 
-The dataset consists of data from years 2016-2025 inclusive, with each containing instances of outbreaks in toronto healthcare institutions. 
-
-“Under the Ontario Health Protection and Promotion Act (HPPA), healthcare institutions (hospitals, long-term care homes and retirement homes) are required to monitor staff and patients/residents for signs and symptoms of gastroenteric (e.g., nausea, vomiting, diarrhea, fever) and respiratory (e.g., cough, runny nose, sore throat, fever) infections. Healthcare institutions must also actively look for, detect and report suspected and/or confirmed outbreaks to their local public health unit”
-
-For every record there is an id number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. Below is a preview of this information:
-
-The type of outbreak is listed as Respiratory, Enteric, or Other.
-By the Ministry of Health, a respiratory outbreak is constituted by “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). [@torontoPublicHealth2023].
-
-Healthcare facilities include ....
-
-Causative Agent-1 is either a specific agent (ie: Coronavirus), or "Unable to identify".
-Causative Agent-2 is either a specific agent, or "None".
-
-Below is an example of the raw data from 2019:
+Each record includes an id number, institution name, institution address, outbreak setting (type of facility), type of outbreak, causative agent-1, causative agent-2, date outbreak began, date outbreak ended, and whether the outbreak is currently active. @tbl-raw_preview contains a preview of this information.
 
 ```{python}
-#| label: table
-#| fig-cap: "2019 Raw Data"
+#| label: tbl-raw_preview
+#| tbl-cap: "2019 Raw Data Preview"
 
 import polars as pl
 import matplotlib.pyplot as plt
@@ -69,37 +55,36 @@ raw_data.head(5)
 
 ```
 
-For this analysis, the variables of interest are the yearly number of outbreaks for Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Over 2019-2024. 
+Healthcare facilities are defined as any institution which provides a healthcare service, including hospitals and long term care homes.
+
+According to the Ontario Ministry of Health, a respiratory outbreak is defined as “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). [@torontoPublicHealth2023].
+
+The type of outbreak is categorized as Respiratory, Enteric, or Other. 
+Respiratory outbreaks refer to outbreaks that affect the respiratory system (eg. nose, lungs)
+Enteric outbreaks refer to outbreaks that affect the gastrointestinal tract.
+
+Causative Agent-1 is either a specific agent (ie: Coronavirus), or marked as "Unable to identify".
+Causative Agent-2 is either a specific agent, or marked as "".
+
+For this analysis, the variables of interest are the yearly number of outbreaks for Coronavirus/COVID-19, Influenza (Flu), Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) over the years of 2019-2024. 
 
 
 ## Analysis Data
 To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Institutions (2019-2024), the statistical programming language Python was used [@python]. Specific libraries that assisted the analysis include `numpy` [@numpy], `matplotlib` [@matplotlib], and `polars` [@polars]. 
 	
-For each year, the number of cases were aggregated, and were aggregated within each respective category. The diseases of interest were: Coronavirus Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. 
-Instances of coronavirus and covid-19 were grouped together under the title of “coronavirus”, given covid is caused by a coronavirus. Influenza A & B were additionally grouped together under the title “Influenza”. 
+For each year, the number of cases for each causative agent were aggregated. The causative agents of interest were: Coronavirus, Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV). 
+Instances of Coronavirus and COVID-19 were grouped together under the category “Coronavirus”. Influenza A and Influenza B were additionally grouped together under the category “Influenza”. 
+@tbl-yearly_count_preview shows the data, and @tbl-yearly_count_summary shows the summary statistics.
 
-Below is a sample of the cleaned data:
+
 
 ```{python}
-#| label: disease-count-preview
-#| fig-cap: "A line plot on a polar axis"
+#| label: tbl-yearly_count_preview
+#| tbl-cap: "Yearly Outbreak Count"
 
 import polars as pl
 import matplotlib.pyplot as plt
 pl.Config.set_tbl_hide_column_data_types(True)  
-
-raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
-raw_data = raw_data.head(5)
-raw_data
-```
-```{python}
-#| label: yearly-count-preview
-#| fig-cap: "A line plot on a polar axis"
-
-import polars as pl
-import matplotlib.pyplot as plt
-pl.Config.set_tbl_hide_column_data_types(True)  
-
 
 raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
 raw_data = raw_data.head(5)
@@ -109,11 +94,10 @@ raw_data = raw_data.rename({"Coronavirus": "Corona", "Syncytial Virus": "RSV",
 raw_data
 ```
 
-Below are the summary statistics for the cleaned yearly count data:
 
 ```{python}
-#| label: yearly-count-summary-statistics
-#| fig-cap: "A line plot on a polar axis"
+#| label: tbl-yearly_count_summary
+#| tbl-cap: "Yearly Outbreak Count Summary Statistics"
 
 import polars as pl
 import polars.selectors as sc
@@ -136,12 +120,43 @@ summary_data.drop("Year")
 ```
 
 
+Additionally, for each year the total number of non-null respiratory causative agents was aggregated, as well as the number of Coronavirus causative agents, non-Coronavirus respiratory causative agents, and unknown respiratory causative agents. @tbl-disease_count_preview shows the cleaned data, and @tbl-disease_count_summary shows the summary statistics.
+
+```{python}
+#| label: tbl-disease_count_preview
+#| tbl-cap: "Count of Respiratory Disease by Type"
+
+import polars as pl
+import matplotlib.pyplot as plt
+pl.Config.set_tbl_hide_column_data_types(True)  
+
+raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
+raw_data = raw_data.head(6)
+raw_data
+```
+
+```{python}
+#| label: tbl-disease_count_summary
+#| tbl-cap: "Respiratory Disease Composition Summary Statistics"
+import polars as pl
+import polars.selectors as sc
+pl.Config.set_tbl_hide_column_data_types(True)  
+
+raw_data = pl.read_csv("../data/02-analysis_data/disease_count.csv")
+summary_data = raw_data.describe()
+summary_data = summary_data.filter(pl.col("statistic") != "count")
+summary_data = summary_data.filter(pl.col("statistic") != "null_count")
+
+summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).round(2))
+summary_data.drop("Year")
+```
+
 # Results {#sec-results}
 
 ## Overall Cases:
 ```{python}
 #| label: all-graph
-#| fig-cap: "A line plot on a polar axis"
+#| tbl-cap: "A line plot on a polar axis"
 
 import polars as pl
 import matplotlib.pyplot as plt
