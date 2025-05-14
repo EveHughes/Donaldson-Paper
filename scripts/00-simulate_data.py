@@ -52,7 +52,7 @@ disease_count = dict()
 disease_count["Year"] = YEARS
 for column in COMPOSITION_COLUMNS:
   disease_count[column] = [0, ]*6
-disease_count["Total"] = [0, ]*6
+disease_count["Total Agents"] = [0, ]*6
 
 #generating random values for disease count
 for i in range(6):
@@ -61,7 +61,7 @@ for i in range(6):
     outbreak_count = int(100*np.random.rand())
     disease_count[disease][i] = outbreak_count
     total_count += outbreak_count
-  disease_count["Total"][i] = total_count
+  disease_count["Total Agents"][i] = total_count
 
 # Create a polars yearly_dataFrame
 analysis_yearly_data = pl.DataFrame(yearly_data)

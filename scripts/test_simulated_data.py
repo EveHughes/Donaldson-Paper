@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Tests Cleaned Disease Count Data & Yearly Disease Count Data
+# Purpose: Tests Simulated Data
 # Author: Evelyn Hughes
 # Date: 13 May 2025
 # Contact: evelyn.hughes@mail.utoronto.ca
@@ -7,18 +7,16 @@
 # Pre-requisites: 
   # - `polars` must be installed (pip install polars)
   # - 'unittest' must be installed
-  # -  02-download_data.py must have been run
-  # -  03-clean_data.py must have been run
-
+  # -  00-simulate_data.py must have been run
 
 #### Workspace setup ####
 import polars as pl
 import unittest
 
-class TestAll(unittest.TestCase):
+class TestSimulated(unittest.TestCase):
   def setUp(self):
-    self.disease_count = pl.read_csv("data/02-analysis_data/disease_count.csv")
-    self.yearly_disease_count = pl.read_csv("data/02-analysis_data/yearly_disease_count.csv")
+    self.disease_count = pl.read_csv("data/00-simulated_data/simulated_disease_count.csv")
+    self.yearly_disease_count = pl.read_csv("data/00-simulated_data/simulated_yearly_count.csv")
 
   def test_diseaseCount(self):
 
