@@ -21,13 +21,13 @@ bibliography: references.bib
 
 # Introduction
 
-On January 25, 2020, the first case of COVID-19 was reported in Canada, in a healthcare facility in Toronto [@covidOverview]. Around two months later on March 17, Doug Ford declared a state of emergency for Ontario, and the closure of facilities such as schools. Additionally, mask mandates, social distancing guidelines, and vaccine cards were all put into place to mitigate the spread of the disease. Later around 2022, these restrictions began to lift. Schools went back in person, etc, etc, etc. [@comartinIlunga2022]. As the restrictions lift, it becomes important to characterize the effect they hold upon respiratory diseases both as a whole, and specific diseases.
+On January 25, 2020, the first case of COVID-19 was reported in Canada in a healthcare facility in Toronto [@covidOverview]. Around two months later on March 17, Doug Ford declared a state of emergency for Ontario and the closure of facilities such as schools. Mask mandates, social distancing guidelines, and vaccine cards were all put into place to mitigate the spread of the disease. Later around 2022, these restrictions slowly began to lift. On March 14, 2022 vaccination requirements were lifted, on March 21, 2022 social distancing regulations were lifted, and on April 27, 2022 all remaining COVID-19 regulatory policies and restrictions expired[@comartinIlunga2022]. Given changes in outbreak count and type heavily impact healthcare facilities, it becomes important to characterize the effect of the lifting of COVID-19 regulations on respiratory diseases as a whole, and specific respiratory diseases.
 
-Previously, in 2021, research was conducted to examine the effects of covid protocol on other respiratory diseases, finding evidence for a decrease in disease during covid protocol[@groves2021]. However, there is a lack of literature examining the effects of the lifting of protocol on these same diseases, and examining the general trends. This research aims to fill that gap, and identify how diseases have reacted to the lifting of covid protocol in relation to both their pre covid (2019), and during covid (2020-2022 ish) levels. Doing such can inform policy that encourages disease-specific preventative measures, and promotion of vaccines to prevent increased outbreaks.
+Previously, in 2021, research was conducted to examine the effects of COVID-19 protocol on non-Coronavirus respiratory diseases, finding evidence for a decrease in disease during the restrictions [@groves2021]. However, there is a lack of literature examining the effects of the lifting of protocol on these same respiratory diseases. This paper aims to fill that gap, and identify how diseases have reacted to the lifting of covid protocol in relation to both their pre covid (2019), and during covid (2020-2022 ish) levels. Doing such can inform policy that encourages disease-specific preventative measures, and promotion of vaccines to prevent increased outbreaks.
 
 This analysis first examines the trends in the overall number of outbreaks and respiratory outbreaks each year to better understand how the number of outbreaks has been varying over the years and identify general trends. Then, it looks at coronavirus, Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus. Finally, it examines the trends in percentage of respiratory outbreaks with covid as an agent. Through the data visualization, it was found that while coronavirus outbreaks have been falling since their covid levels, other respiratory diseases have been seeing a subsequent increase in cases post pandemic. Additionally, the percentage of respiratory outbreaks with covid as an agent has been decreasing since the pandemic. So, while an emphasis on covid specific protocols is important, preventative measures for other respiratory diseases, such as RSV vaccines, that were overshadowed during the pandemic should be further encouraged [@publicHealthAgency2024].
 
-In the sections that follow are a description of the data, visualization of the data and discussion of the results.
+In what follows is a description of the data ([@sec-data]), visualization of the data ([@sec-results]), and an analysis of the visualization ([@sec-discussion]).
 
 
 # Data {#sec-data}
@@ -136,7 +136,7 @@ summary_data.drop("Year")
 ```
 
 
-# Results
+# Results {#sec-results}
 
 ## Overall Cases:
 ```{python}
@@ -258,7 +258,7 @@ plt.show()
 We see the number of Influenza (A & B), Parainfluenza, Respiratory Syncytial Virus (RSV), Metapneumovirus, and Rhinovirus outbreaks all generally fell to lower levels during the pandemic (2020-2021). 
 Post pandemic (2022-2024), all, with the exception of Influenza, have resurged to greater than pre-pandemic (2019) levels. Influenza outbreaks have also increased since the pandemic, but remain at a lower level comparative to 2019.
 
-# Discussion
+# Discussion {#sec-discussion}
 
 It becomes apparent that given coronaviruses continue to comprise the greatest proportion of respiratory disease outbreaks in healthcare facilities in Toronto, and coronavirus outbreak trends match those of total respiratory outbreaks from, and total outbreaks from  2019-2024 that coronavirus outbreaks remain the biggest driver of disease outbreaks in Toronto. However, since the pandemic we have seen a decrease in both coronavirus cases, and percentage composition of all agents, indicating that its impact, while still pertinent, is decreasing. 
 
