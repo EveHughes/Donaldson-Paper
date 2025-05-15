@@ -10,8 +10,10 @@
 
 #### Workspace setup ####
 import polars as pl
+from datetime import datetime
 
 #constant variables
+date = str(datetime.today()).split()[0]
 MONTHS = ["January", "February", "March", "April", 
                              "May", "June", "July", "August", "September", "October", "November", "December"]
 YEARS = ["2019", "2020", "2021", "2022", "2023", "2024"]
@@ -38,11 +40,11 @@ yearly_disease_count["Total"] = [0, ]*6
 
 ## Finding composition based on primary causative agents ##
 
-for i in range(2019, 2025):
-    raw = pl.read_csv("data/01-raw_data/ob_report_" + str(i) + ".csv")
+for year in range(2019, 2025):
+    raw = pl.read_csv("data/01-raw_data/" + date + "_ob_report_" + str(year) + ".csv")
     for row in raw.rows(named = True):
        #index
-        index = i - 2019
+        index = year - 2019
 
        #getting disease type, only check common respiratory
         disease_type = row["Type of Outbreak"]
@@ -79,12 +81,12 @@ for i in range(2019, 2025):
                 disease_count["Other"][index] += 1
 
 ## summing total cases for the year
-for i in range(2016, 2026):
-    if i not in [2019, 2020, 2021, 2022, 2023, 2024]:
+for year in range(2016, 2026):
+    if year not in [2019, 2020, 2021, 2022, 2023, 2024]:
         continue
 
     # reading & iterating through csv
-    raw = pl.read_csv("data/01-raw_data/ob_report_" + str(i) + ".csv")
+    raw = pl.read_csv("data/01-raw_data/" + date + "_ob_report_" + str(year) + ".csv")
     for row in raw.rows(named = True):
         #getting disease type
         disease_type = row["Type of Outbreak"]
@@ -101,7 +103,7 @@ for i in range(2016, 2026):
             disease_two = row["Causative Agent - 2"]
 
         #updating yearly total count
-        index = i - 2019
+        index = year - 2019
         yearly_disease_count["Total"][index] += 1
 
         #updating yearly total respiratory count

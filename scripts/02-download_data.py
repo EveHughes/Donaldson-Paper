@@ -12,6 +12,7 @@
 #### Workspace setup ####
 import polars as pl
 from io import StringIO
+from datetime import datetime
 
 #### Download data ####
 import requests
@@ -29,7 +30,8 @@ params = { "id": "outbreaks-in-toronto-healthcare-institutions"}
 package = requests.get(url, params = params).json()
 
 # To get resource data:
-i = 2025
+date = str(datetime.today()).split()[0]
+year = int(date[:4])
 for idx, resource in enumerate(package["result"]["resources"]):
 
        # for datastore_active resources:
@@ -40,5 +42,5 @@ for idx, resource in enumerate(package["result"]["resources"]):
 
             # Writing raw data to CSV
             analysis_data = pl.read_csv(StringIO(resource_dump_data.text))
-            analysis_data.write_csv("data/01-raw_data/ob_report_" + str(i) + ".csv")
-            i-=1
+            analysis_data.write_csv("data/01-raw_data/" + date + "_ob_report_" + str(year) + ".csv")
+            year-=1
