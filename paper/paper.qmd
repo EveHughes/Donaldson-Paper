@@ -67,14 +67,18 @@ raw_data.head(5)
 
 Healthcare facilities are defined as any institution that provides a healthcare service, including hospitals and long-term care homes.
 
-According to the Ontario Ministry of Health, a respiratory outbreak is defined as “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor). [@torontoPublicHealth2023].
+According to the Ontario Ministry of Health, a respiratory outbreak is defined as “Two cases of acute respiratory infections (ARI) within 48 hours with any common epidemiological link (e.g., unit, floor), at least one of which must be laboratory-confirmed; OR Three cases of ARI (laboratory confirmation not necessary) occurring within 48 hours with any common epidemiological link (e.g., unit, floor) [@torontoPublicHealth2023].
 
 The type of outbreak is categorized as Respiratory, Enteric, or Other. 
 Respiratory outbreaks refer to outbreaks that affect the respiratory system.
 Enteric outbreaks refer to outbreaks that affect the gastrointestinal tract.
 
-Causative Agent-1 is either a specific agent (ie: Coronavirus), or marked as "Unable to identify".
-Causative Agent-2 is either a specific agent or marked as "".
+Causative Agent-1 is either a specific agent (ie: Coronavirus), or marked as "Unable to identify". [^1]
+
+[^1]: Based on the definition of an outbreak, it is likely that Causative Agent-1 being marked as "Unable to identify" reflects an outbreak with three cases of ARI, for which laboratory confirmation is not necessary [@torontoPublicHealth2023].
+
+Causative Agent-2 is either a specific agent or marked as "". 
+
 
 For this analysis, the variables of interest are the yearly number of outbreaks for Coronavirus/COVID-19, Influenza (Flu), Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV) over the years 2019-2024. 
 
@@ -85,9 +89,9 @@ To simulate, test, download, and clean the Outbreaks in Toronto Healthcare Insti
 	
 For each year, the number of cases for each causative agent was aggregated. The causative agents of interest were: Coronavirus, Influenza, Parainfluenza (PIV), Respiratory Syncytial Virus (RSV), Metapneumovirus (MPV), and Rhinovirus (RV). 
 Instances of Coronavirus and COVID-19 were grouped together under the category “Coronavirus”. Influenza A and Influenza B were additionally grouped together under the category “Influenza”. 
-@tbl-yearly_count_preview shows the data, and @tbl-yearly_count_summary shows the summary statistics.
+@tbl-yearly_count_preview [^2] shows the data, and @tbl-yearly_count_summary shows the summary statistics.
 
-
+[^2]: Totals between @tbl-yearly_count_preview and @tbl-disease_count_preview differ as the former aggregates the number of outbreaks, while the latter aggregates the number of non-null causative agents of which a given outbreak can have 0-2 of.
 ```{python}
 #| label: tbl-yearly_count_preview
 #| tbl-cap: "Yearly Outbreak Count"
@@ -99,7 +103,6 @@ pl.Config.set_tbl_hide_column_data_types(True)
 
 #reading in & reformatting
 raw_data = pl.read_csv("../data/02-analysis_data/yearly_disease_count.csv")
-raw_data = raw_data.head(5)
 raw_data = raw_data.rename({"Coronavirus": "Corona", "Syncytial Virus": "RSV",
     "Metapneumovirus": "MPV",
     "Influenza": "Flu", "Rhinovirus": "RV", "Parainfluenza": "PIV"})
@@ -138,7 +141,9 @@ summary_data.drop("Year")
 
 ```
 
-It is important to note that in @tbl-yearly_count_preview, non-Coronavirus respiratory causative agents in 2021 had extremely low outbreak counts. While this could be representative of genuinely surpressed levels of other respiratory outbreaks due to increased COVID-19 cases, it could be indicative of a reporting issue. Further research should be conducted to clarify, though such research is beyond the scope of this paper.
+It is important to note that in @tbl-yearly_count_preview, non-Coronavirus respiratory causative agents in 2021 had extremely low outbreak counts. While this could be representative of genuinely surpressed levels of other respiratory outbreaks due to increased COVID-19 cases, it could be indicative of a reporting issue. 
+Additionally, in @tbl-yearly_count_preview, there is a near doubling of total cases between 2020 to 2024. The magnitude of this increase suggests that detection bias may have contributed. In other words, COVID-19 may have led to an increased focus on outbreak detection, and the increase we see from 2019 to 2024 was possibly caused in part by this.
+Further research should be conducted to clarify both of these issues, though such research is beyond the scope of this paper.
 
 
 ### Composition Respiratory Disease Causative Agents
@@ -318,7 +323,7 @@ The lack of knowledge surrounding non-Coronavirus and Influenza respiratory caus
 
 The main limitation of this study is the restriction of focus to healthcare facilities. All data is from healthcare facilities, hence, findings must remain in the context of healthcare facilities. The extension of these results to the general Toronto population may be misrepresentative. Thus, to confirm the same trends hold in general, further research should be conducted with data coming from the general Toronto public.
 
-Additionally, as mentioned in [@sec-yearly_count], the extremely low reported outbreak counts of non-Coronavirus causative agents in 2021 point to potential issues with the validity of the data. Further research should be conducted to determine the cause of these low numbers and assess the validity of the dataset.
+Additionally, as mentioned in [@sec-yearly_count], the extremely low reported outbreak counts of non-Coronavirus causative agents in 2021 point to potential issues with the validity of the data, and the doubling in total outbreaks from 2020 to 2024 suggests detection biases may have contributed to pandemic and post-pandemic increases in outbreaks. Further research should be conducted to determine the cause of these low numbers and outbreak increases, and assess the validity of the dataset.
 
 
 \newpage
