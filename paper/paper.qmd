@@ -3,7 +3,7 @@ title: "Respiratory Outbreak Trends in Toronto Healthcare Institutions Across th
 subtitle: "The Response of Coronavirus and Other Respiratory Diseases to COVID-19 Pandemic Policies"
 author: 
   - Evelyn Hughes
-thanks: "Code and data are available at: [https://github.com/EveHughes/Donaldson-Paper]."
+thanks: "Code and data are available at: https://github.com/EveHughes/Donaldson-Paper."
 date: 05/12/2025
 date-format: long
 
@@ -47,11 +47,15 @@ Each record includes an ID number, institution name, institution address, outbre
 #set up
 import polars as pl
 import matplotlib.pyplot as plt
+from datetime import datetime
+
 pl.Config.set_tbl_hide_column_data_types(True)  
 pl.Config(tbl_width_chars=1000)
 
 #reading in of data & removing unneeded info
-raw_data = pl.read_csv("../data/01-raw_data/ob_report_2019.csv")
+date = str(datetime.today()).split()[0]
+
+raw_data = pl.read_csv("../data/01-raw_data/" + date + "_ob_report_2019.csv")
 for key in raw_data.columns:
   if key not in ["_id", "Type of Outbreak", "Causative Agent-1", "Causative Agent-2"]:
     raw_data = raw_data.drop(key)
@@ -127,7 +131,7 @@ summary_data = summary_data.rename({"Coronavirus": "Corona", "Syncytial Virus": 
     "Influenza": "Flu", "Rhinovirus": "RV", "Parainfluenza": "PIV"})
 
 #rounding data
-summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).round(2))
+summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).cast(pl.Int64))
 
 #creating table
 summary_data.drop("Year")
@@ -170,8 +174,8 @@ summary_data = raw_data.describe()
 summary_data = summary_data.filter(pl.col("statistic") != "count")
 summary_data = summary_data.filter(pl.col("statistic") != "null_count")
 
-#rounding all data
-summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).round(2))
+#rounding all data & getting rid of quotes
+summary_data = summary_data.with_columns(sc.by_dtype(pl.Float64).cast(pl.Int64))
 
 #creating table
 summary_data.drop("Year")
